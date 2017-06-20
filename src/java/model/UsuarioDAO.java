@@ -17,24 +17,24 @@ import java.util.logging.Logger;
 
 /**
  *
- * @author leoomoreira
+ * @author Debora
  */
-public class PessoaDAO {
+public class UsuarioDAO {
     
-    public List<Pessoa> getAll() {
-        List<Pessoa> resultado = new ArrayList<Pessoa>();
+    public List<Usuario> getAll() {
+        List<Usuario> resultado = new ArrayList<Usuario>();
         try {
             Class.forName("org.postgresql.Driver");
-            Connection c = DriverManager.getConnection("jdbc:postgresql://localhost:5432/pessoabd", "postgres", "ufc123");
+            Connection c = DriverManager.getConnection("jdbc:postgresql://localhost:5432/looksupbd", "postgres", "debora123");
             
             Statement s = c.createStatement();
             ResultSet r = s.executeQuery("SELECT * FROM pessoa");
             
             while (r.next()) {
-                Pessoa p = new Pessoa();
-                p.setCodigo(r.getInt("codigo"));
+                Usuario p = new Usuario();
+                p.setId(r.getInt("id"));
                 p.setNome(r.getString("nome"));
-                p.setLogin(r.getString("login"));
+                p.setEmail(r.getString("email"));
                 p.setSenha(r.getString("senha"));
                 resultado.add(p);
             }
@@ -43,9 +43,9 @@ public class PessoaDAO {
             s.close();
             c.close();
         } catch (ClassNotFoundException ex) {
-            Logger.getLogger(PessoaDAO.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(UsuarioDAO.class.getName()).log(Level.SEVERE, null, ex);
         } catch (SQLException ex) {
-            Logger.getLogger(PessoaDAO.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(UsuarioDAO.class.getName()).log(Level.SEVERE, null, ex);
         }
         
         return resultado;

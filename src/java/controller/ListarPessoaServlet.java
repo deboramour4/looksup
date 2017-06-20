@@ -11,8 +11,8 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import model.Pessoa;
-import model.PessoaDAO;
+import model.Usuario;
+import model.UsuarioDAO;
 
 /**
  *
@@ -31,8 +31,8 @@ public class ListarPessoaServlet extends HttpServlet {
      */
     protected void service(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        PessoaDAO dao = new PessoaDAO();
-        List<Pessoa> pessoas = dao.getAll();
+        UsuarioDAO dao = new UsuarioDAO();
+        List<Usuario> pessoas = dao.getAll();
         request.setAttribute("pessoas", pessoas);
         request.getRequestDispatcher("listarPessoas.jsp").forward(request, response);
     }

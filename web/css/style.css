@@ -232,11 +232,12 @@ a.item_add {
 /*--//header--*/
 /*--banner--*/
 .banner{
-	width: 100%;
+    width: 100%;
     height: 700px;
     display: block;
     background: url(../images/ba11.jpg)no-repeat right top;
-	overflow-x:hidden;
+    overflow-x:hidden;
+       background-size: cover;
 }
 .no-cssanimations .rw-wrapper .rw-sentence span:first-child{
 	opacity: 1;

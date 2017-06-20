@@ -1,11 +1,11 @@
 <%-- 
-    Document   : listarPessoas
+    Document   : listarUsuarios
     Created on : 01/06/2017, 11:11:47
     Author     : leoomoreira
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-<%@page import="model.Pessoa" %>
+<%@page import="model.Usuario" %>
 <%@page import="java.util.List" %>
 <!DOCTYPE html>
 <html>
@@ -14,10 +14,10 @@
         <title>JSP Page</title>
     </head>
     <body>
-        <h1>Lista de Pessoas</h1>
+        <h1>Lista de Usuarios</h1>
         <%
-            List<Pessoa> pessoas = (List<Pessoa>) request.getAttribute("pessoas");
-            if (pessoas != null && pessoas.size() > 0) {
+            List<Usuario> usuarios = (List<Usuario>) request.getAttribute("usuarios");
+            if (usuarios != null && usuarios.size() > 0) {
         %>
         <table border="1">
             <tr>
@@ -26,11 +26,11 @@
                 <td>Login</td>
                 <td>Senha</td>
             </tr>
-            <% for (Pessoa p : pessoas) {%>
+            <% for (Usuario p : usuarios) {%>
             <tr>
-                <td><%= p.getCodigo()%></td>
+                <td><%= p.getId()%></td>
                 <td><%= p.getNome()%></td>
-                <td><%= p.getLogin()%></td>
+                <td><%= p.getEmail()%></td>
                 <td><%= p.getSenha()%></td>
             </tr>
             <% } %>

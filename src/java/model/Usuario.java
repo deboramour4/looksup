@@ -7,20 +7,20 @@ package model;
 
 /**
  *
- * @author leoomoreira
+ * @author Debora
  */
-public class Pessoa {
-    private int codigo;
+public class Usuario {
+    private int id;
     private String nome;
-    private String login;
+    private String email;
     private String senha;
 
-    public int getCodigo() {
-        return codigo;
+    public int getId() {
+        return id;
     }
 
-    public void setCodigo(int codigo) {
-        this.codigo = codigo;
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getNome() {
@@ -31,12 +31,12 @@ public class Pessoa {
         this.nome = nome;
     }
 
-    public String getLogin() {
-        return login;
+    public String getEmail() {
+        return email;
     }
 
-    public void setLogin(String login) {
-        this.login = login;
+    public void setEmail(String email) {
+        this.email = email;
     }
 
     public String getSenha() {

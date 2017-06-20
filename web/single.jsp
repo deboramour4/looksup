@@ -86,15 +86,13 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				<p class="in-para"> There are many variations of passages of Lorem Ipsum.</p>
 			    <div class="price_single">
 				  <span class="reducedfrom item_price">$140.00</span>
-				 <a href="#">click for offer</a>
 				 <div class="clearfix"></div>
 				</div>
 				<h4 class="quick">Quick Overview:</h4>
 				<p class="quick_desc"> Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim placerat facer possim assum. Typi non habent claritatem insitam; es</p>
 			    <div class="wish-list">
 				 	<ul>
-				 		<li class="wish"><a href="#"><span class="glyphicon glyphicon-check" aria-hidden="true"></span>Add to Wishlist</a></li>
-				 	    <li class="compare"><a href="#"><span class="glyphicon glyphicon-resize-horizontal" aria-hidden="true"></span>Add to Compare</a></li>
+                                            <li class="wish"><a href="#"><span class="glyphicon glyphicon-check" aria-hidden="true"></span>Add to Wishlist</a></li>
 				 	</ul>
 				 </div>
 				 <div class="quantity"> 
@@ -125,7 +123,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					</div>
 			<div class="clearfix"> </div>
 			<!---->
-			<div class="tab-head">
+			<!-- <div class="tab-head">
 			 <nav class="nav-sidebar">
 		<ul class="nav tabs">
           <li class="active"><a href="#tab1" data-toggle="tab">Product Description</a></li>
@@ -133,7 +131,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
           <li class=""><a href="#tab3" data-toggle="tab">Reviews</a></li>  
 		</ul>
 	</nav>
-	<div class="tab-content one">
+	 <div class="tab-content one">
 <div class="tab-pane active text-style" id="tab1">
  <div class="facts">
 									  <p > There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words, combined </p>
@@ -178,7 +176,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
   
   </div>
   <div class="clearfix"></div>
-  </div>
+  </div> -->
 			<!---->	
 </div>
 <!----->
@@ -186,42 +184,27 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <div class="col-md-3 product-bottom product-at">
 			<!--categories-->
 				<div class=" rsidebar span_1_of_left">
-						<h4 class="cate">Categories</h4>
+						<h4 class="cate">Categorias</h4>
 							 <ul class="menu-drop">
-							<li class="item1"><a href="#">Men </a>
+							<li class="item1"><a href="#">Roupas</a>
 								<ul class="cute">
 									<li class="subitem1"><a href="product.html">Cute Kittens </a></li>
 									<li class="subitem2"><a href="product.html">Strange Stuff </a></li>
 									<li class="subitem3"><a href="product.html">Automatic Fails </a></li>
 								</ul>
 							</li>
-							<li class="item2"><a href="#">Women </a>
+							<li class="item2"><a href="#">Acessórios</a>
 								<ul class="cute">
 									<li class="subitem1"><a href="product.html">Cute Kittens </a></li>
 									<li class="subitem2"><a href="product.html">Strange Stuff </a></li>
 									<li class="subitem3"><a href="product.html">Automatic Fails </a></li>
 								</ul>
 							</li>
-							<li class="item3"><a href="#">Kids</a>
+							<li class="item3"><a href="#">Calçados</a>
 								<ul class="cute">
 									<li class="subitem1"><a href="product.html">Cute Kittens </a></li>
 									<li class="subitem2"><a href="product.html">Strange Stuff </a></li>
 									<li class="subitem3"><a href="product.html">Automatic Fails</a></li>
-								</ul>
-							</li>
-							<li class="item4"><a href="#">Accessories</a>
-								<ul class="cute">
-									<li class="subitem1"><a href="product.html">Cute Kittens </a></li>
-									<li class="subitem2"><a href="product.html">Strange Stuff </a></li>
-									<li class="subitem3"><a href="product.html">Automatic Fails</a></li>
-								</ul>
-							</li>
-									
-							<li class="item4"><a href="#">Shoes</a>
-								<ul class="cute">
-									<li class="subitem1"><a href="product.html">Cute Kittens </a></li>
-									<li class="subitem2"><a href="product.html">Strange Stuff </a></li>
-									<li class="subitem3"><a href="product.html">Automatic Fails </a></li>
 								</ul>
 							</li>
 						</ul>
@@ -281,7 +264,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 								</div>
 							</div>
 				   </section>
-				   		<section  class="sky-form">
+				   	<!-- <section  class="sky-form">
 						<h4 class="cate">Brand</h4>
 							<div class="row row1 scroll-pane">
 								<div class="col col-4">
@@ -297,7 +280,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 									<label class="checkbox"><input type="checkbox" name="checkbox"><i></i>Ray-Ban</label>
 								</div>
 							</div>
-				   </section>		
+				   </section>	--> 	
 		</div>
 		<div class="clearfix"> </div>
 	</div>
@@ -324,66 +307,11 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 		</div>	
 		
 	<!--//content-->
-		<!--//footer-->
-	<div class="footer">
-	<div class="footer-middle">
-				<div class="container">
-					<div class="col-md-3 footer-middle-in">
-						<a href="index.html"><img src="images/log.png" alt=""></a>
-						<p>Suspendisse sed accumsan risus. Curabitur rhoncus, elit vel tincidunt elementum, nunc urna tristique nisi, in interdum libero magna tristique ante. adipiscing varius. Vestibulum dolor lorem.</p>
-					</div>
-					
-					<div class="col-md-3 footer-middle-in">
-						<h6>Information</h6>
-						<ul class=" in">
-							<li><a href="404.html">About</a></li>
-							<li><a href="contact.html">Contact Us</a></li>
-							<li><a href="#">Returns</a></li>
-							<li><a href="contact.html">Site Map</a></li>
-						</ul>
-						<ul class="in in1">
-							<li><a href="#">Order History</a></li>
-							<li><a href="wishlist.html">Wish List</a></li>
-							<li><a href="login.html">Login</a></li>
-						</ul>
-						<div class="clearfix"></div>
-					</div>
-					<div class="col-md-3 footer-middle-in">
-						<h6>Tags</h6>
-						<ul class="tag-in">
-							<li><a href="#">Lorem</a></li>
-							<li><a href="#">Sed</a></li>
-							<li><a href="#">Ipsum</a></li>
-							<li><a href="#">Contrary</a></li>
-							<li><a href="#">Chunk</a></li>
-							<li><a href="#">Amet</a></li>
-							<li><a href="#">Omnis</a></li>
-						</ul>
-					</div>
-					<div class="col-md-3 footer-middle-in">
-						<h6>Newsletter</h6>
-						<span>Sign up for News Letter</span>
-							<form>
-								<input type="text" value="Enter your E-mail" onfocus="this.value='';" onblur="if (this.value == '') {this.value ='Enter your E-mail';}">
-								<input type="submit" value="Subscribe">	
-							</form>
-					</div>
-					<div class="clearfix"> </div>
-				</div>
-			</div>
-			<div class="footer-bottom">
-				<div class="container">
-					<ul class="footer-bottom-top">
-						<li><a href="#"><img src="images/f1.png" class="img-responsive" alt=""></a></li>
-						<li><a href="#"><img src="images/f2.png" class="img-responsive" alt=""></a></li>
-						<li><a href="#"><img src="images/f3.png" class="img-responsive" alt=""></a></li>
-					</ul>
-					<p class="footer-class">&copy; 2016 Shopin. All Rights Reserved | Design by  <a href="http://w3layouts.com/" target="_blank">W3layouts</a> </p>
-					<div class="clearfix"> </div>
-				</div>
-			</div>
-		</div>
-		<!--//footer-->
+
+<!--//footer-->
+<%@ include file= "views/footer.jsp" %>
+<!--//footer-->
+
 <script src="js/imagezoom.js"></script>
 
 	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->

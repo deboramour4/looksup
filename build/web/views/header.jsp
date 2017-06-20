@@ -12,7 +12,9 @@
             <ul>
                 <li><a href="login.jsp">Login</a></li>
                 <li><a href="register.jsp">Cadrastre-se</a></li>
-                <li><a href="checkout.jsp">Logout</a></li>
+                <li><a href="">Olá, fulana!</a></li>
+                <li><a href="">Logout</a></li>
+                <li><a href="checkout.jsp">Carrinho</a></li>
             </ul>
         </div>
         <div class="col-sm-5 header-social">		
@@ -180,8 +182,8 @@
         <div class="cart box_1">
                 <a href="checkout.jsp">
                 <h3> <div class="total">
-                        <span class="simpleCart_total"></span></div>
-                        <img src="images/cart.png" alt=""/></h3>
+                    <span class="simpleCart_total"></span></div>
+                    <img src="images/cart.png" alt=""/></h3>
                 </a>
                 <!-- provavelente esvazia o carrinho
                 <p><a href="javascript:;" class="simpleCart_empty">Empty Cart</a></p> -->
@@ -196,13 +198,13 @@
     <script src="js/jquery.magnific-popup.js" type="text/javascript"></script>
     <!---//pop-up-box---->
     <div id="small-dialog" class="mfp-hide">
-            <div class="search-top">
-                    <div class="login-search">
-                            <input type="submit" value="">
-                            <input type="text" value="Search.." onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Search..';}">		
-                    </div>
-                    <p>Shopin</p>
-            </div>				
+        <div class="search-top">
+                <div class="login-search">
+                        <input type="submit" value="">
+                        <input type="text" value="Pesquisar.." onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Search..';}">		
+                </div>
+                <p>Looks Up Store</p>
+        </div>				
     </div>
 <script>
     $(document).ready(function() {
