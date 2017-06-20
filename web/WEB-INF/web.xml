@@ -4,9 +4,17 @@
         <servlet-name>ListarPessoaServlet</servlet-name>
         <servlet-class>controller.ListarPessoaServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>ProdutoDAO</servlet-name>
+        <servlet-class>model.ProdutoDAO</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>ListarPessoaServlet</servlet-name>
         <url-pattern>/ListarPessoaServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ProdutoDAO</servlet-name>
+        <url-pattern>/ProdutoDAO</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
