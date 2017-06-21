@@ -1,0 +1,4 @@
+INSERT INTO "user" (name , email, password) VALUES ('Débora Moura', 'deboramoura@alu.ufc.br', 'debora123');
+INSERT INTO "user" (name , email, password) VALUES ('Leonardo Moreira', 'leoomoreira@virtual.ufc.br', 'leo123');
+INSERT INTO "user" (name , email, password) VALUES ('Emanuel Coutinho', 'priscila@gmail.com', 'pri123');
+INSERT INTO "user" (name , email, password) VALUES ('Priscila Moura', 'priscila@gmail.com', 'pri123');
