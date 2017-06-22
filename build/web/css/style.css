@@ -687,7 +687,7 @@ a.cart:hover{
 	border-bottom:1px solid #fa7455	;
 }
 .single {
-  padding: 5em 0 0;
+  padding-bottom: 3em;
 }
 .available h6{
 	color:#52D0C4;
@@ -985,11 +985,18 @@ ul.product-qty {
     padding-left: 0px;
 }
 .facts p {
-    color: #B3B3B3;
-    font-size: 0.9em;
+    color: #555;
+    font-size: 1em;
     line-height: 2em;
     padding: 0 0 1em;
 }
+.facts {
+    padding: 0.5em;
+}
+.facts:nth-child(even) {
+    background-color: #EDEDED;
+}
+
 .facts ul li {
     list-style: none;
     color: #B3B3B3;
@@ -1006,10 +1013,10 @@ nav.nav-sidebar {
 	border-left: 1px solid #EDEDED;
 }
 .one{
-	float:right;
+    float:right;
     width: 70%;
-	 border: 1px solid #EDEDED;
-	 padding:1em;
+    border: 1px solid #EDEDED;
+    padding:0.7em;
 }
 .product-at{
 	padding-top:0;
@@ -1027,6 +1034,7 @@ nav.nav-sidebar {
 	border: 1px solid #E9E9E9;
 	margin-bottom: 2em;
 	padding: 0.5em 1em;
+        background-color: #FFFFFF;
 }
 .login-mail i{
 	color: #F67777;

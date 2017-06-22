@@ -19,7 +19,8 @@
                     } else { 
                 %>
                 <li><a href="">Olá, <%= session.getAttribute("nome") %>!</a></li>
-                <li><a href="">Logout</a></li>
+                <li><a href="account.jsp">Minha conta</a></li>
+                <li><a href="logout">Logout</a></li>
                 <%
                     }
                 %>
