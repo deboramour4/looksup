@@ -47,7 +47,7 @@ public class UsuarioDAO {
         return resultado;
     }
     
-    public boolean addUser(String nome, String email, String senha) {
+    public boolean addUser(String nome, String email, String senha) { //SOMENTE E-MAIL QUE NAO ESTEJA CADASTRADO
         try {
             Class.forName("org.postgresql.Driver");
             Connection c = DriverManager.getConnection("jdbc:postgresql://localhost:5432/looksup", "postgres", "debora123");
@@ -60,6 +60,9 @@ public class UsuarioDAO {
             pstmt.setString(3, senha);
             pstmt.executeUpdate();
             
+            pstmt.close();
+            c.close();
+            
         } catch (ClassNotFoundException ex) {
             Logger.getLogger(UsuarioDAO.class.getName()).log(Level.SEVERE, null, ex);
             return false;
@@ -68,6 +71,38 @@ public class UsuarioDAO {
             return false;
         }
         return true;
+    }
+       
+    public Usuario getUserByEmail(String email){
+        Usuario p = new Usuario();
+        
+        try {
+            Class.forName("org.postgresql.Driver");
+            Connection c = DriverManager.getConnection("jdbc:postgresql://localhost:5432/looksup", "postgres", "debora123");
+            
+            String query = "SELECT * FROM \"user\" WHERE email = ?";
+            PreparedStatement pstmt = c.prepareStatement(query);
+            
+            pstmt.setString(1, email);
+            System.out.println(query);//sasasasasasasdasdasdasdasdasdasd
+            ResultSet r = pstmt.executeQuery();
+            
+            while(r.next()){
+                p.setId(r.getInt("id"));
+                p.setNome(r.getString("name"));
+                p.setEmail(r.getString("email"));
+                p.setSenha(r.getString("password"));
+            }
+            pstmt.close();
+            r.close();
+            c.close();
+            
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(UsuarioDAO.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (SQLException ex) {
+            Logger.getLogger(UsuarioDAO.class.getName()).log(Level.SEVERE, null, ex);
+        }   
+        return p;
     }
     
     

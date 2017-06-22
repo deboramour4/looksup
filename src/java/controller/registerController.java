@@ -16,7 +16,6 @@ import model.UsuarioDAO;
 public class registerController extends HttpServlet {
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
-        System.out.println("chegou até aqui");
         
         String name = request.getParameter("name");
         String email = request.getParameter("email");

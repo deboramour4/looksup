@@ -10,10 +10,19 @@
         <div class="container">
         <div class="col-sm-5 col-md-offset-2  header-login">
             <ul>
+                <%
+                    if(session.getAttribute("email") == null) {
+                %>
                 <li><a href="login.jsp">Login</a></li>
                 <li><a href="register.jsp">Cadrastre-se</a></li>
-                <li><a href="">Olá, fulana!</a></li>
+                <%
+                    } else { 
+                %>
+                <li><a href="">Olá, <%= session.getAttribute("nome") %>!</a></li>
                 <li><a href="">Logout</a></li>
+                <%
+                    }
+                %>
                 <li><a href="checkout.jsp">Carrinho</a></li>
             </ul>
         </div>
