@@ -21,7 +21,6 @@ import model.UsuarioDAO;
  */
 public class loginController extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
-         System.out.println("ENTROU AQUI CONTROLLER");
          
         String email = request.getParameter("email");
         String password = request.getParameter("password");
@@ -29,13 +28,16 @@ public class loginController extends HttpServlet {
         UsuarioDAO dao = new UsuarioDAO();
         Usuario user = dao.getUserByEmail(email);
                 
-        if(password.equals(user.getSenha())){           
+        if(password.equals(user.getPassword())){           
             HttpSession session = request.getSession(true);
-            session.setAttribute("nome", user.getNome());
-            session.setAttribute("email", email);
+            session.setAttribute("nome", user.getName());
+            session.setAttribute("id", user.getId());
             response.sendRedirect("index.jsp");  
         } else {
             response.sendRedirect("404.jsp");
         }
+        
+        
+        //request.getRequestDispatcher("listarPessoas.jsp").forward(request, response);
     }
 }

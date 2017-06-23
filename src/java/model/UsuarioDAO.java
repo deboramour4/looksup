@@ -19,6 +19,7 @@ public class UsuarioDAO {
     
     public List<Usuario> getAll() {
         List<Usuario> resultado = new ArrayList<Usuario>();
+        
         try {
             Class.forName("org.postgresql.Driver");
             Connection c = DriverManager.getConnection("jdbc:postgresql://localhost:5432/looksup", "postgres", "debora123");
@@ -29,15 +30,18 @@ public class UsuarioDAO {
             while (r.next()) {
                 Usuario p = new Usuario();
                 p.setId(r.getInt("id"));
-                p.setNome(r.getString("name"));
+                p.setName(r.getString("name"));
+                p.setBirth(r.getString("birth"));
+                p.setPhone(r.getInt("phone"));
                 p.setEmail(r.getString("email"));
-                p.setSenha(r.getString("password"));
+                p.setPassword(r.getString("password"));
                 resultado.add(p);
             }
             
             r.close();
             s.close();
             c.close();
+            
         } catch (ClassNotFoundException ex) {
             Logger.getLogger(UsuarioDAO.class.getName()).log(Level.SEVERE, null, ex);
         } catch (SQLException ex) {
@@ -47,17 +51,19 @@ public class UsuarioDAO {
         return resultado;
     }
     
-    public boolean addUser(String nome, String email, String senha) { //SOMENTE E-MAIL QUE NAO ESTEJA CADASTRADO
+    public boolean addUser(String name, String email,String birth, int phone, String password) { //SOMENTE E-MAIL QUE NAO ESTEJA CADASTRADO
         try {
             Class.forName("org.postgresql.Driver");
             Connection c = DriverManager.getConnection("jdbc:postgresql://localhost:5432/looksup", "postgres", "debora123");
             
-            String query = "INSERT INTO \"user\" (name , email, password) VALUES (?, ?, ?)";
+            String query = "INSERT INTO \"user\" (name , email, birth, phone, password) VALUES (?, ?, ?, ?, ?)";
             PreparedStatement pstmt = c.prepareStatement(query);
 
-            pstmt.setString(1, nome);
+            pstmt.setString(1, name);
             pstmt.setString(2, email);
-            pstmt.setString(3, senha);
+            pstmt.setString(3, birth);
+            pstmt.setInt(4, phone);
+            pstmt.setString(5, password);
             pstmt.executeUpdate();
             
             pstmt.close();
@@ -84,14 +90,49 @@ public class UsuarioDAO {
             PreparedStatement pstmt = c.prepareStatement(query);
             
             pstmt.setString(1, email);
-            System.out.println(query);//sasasasasasasdasdasdasdasdasdasd
             ResultSet r = pstmt.executeQuery();
             
             while(r.next()){
                 p.setId(r.getInt("id"));
-                p.setNome(r.getString("name"));
+                p.setName(r.getString("name"));
+                p.setBirth(r.getString("birth"));
+                p.setPhone(r.getInt("phone"));
                 p.setEmail(r.getString("email"));
-                p.setSenha(r.getString("password"));
+                p.setPassword(r.getString("password"));
+            }
+            pstmt.close();
+            r.close();
+            c.close();
+            
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(UsuarioDAO.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (SQLException ex) {
+            Logger.getLogger(UsuarioDAO.class.getName()).log(Level.SEVERE, null, ex);
+        }   
+        return p;
+    }
+    
+    
+    public Usuario getUserById(int id){
+        Usuario p = new Usuario();
+        
+        try {
+            Class.forName("org.postgresql.Driver");
+            Connection c = DriverManager.getConnection("jdbc:postgresql://localhost:5432/looksup", "postgres", "debora123");
+            
+            String query = "SELECT * FROM \"user\" WHERE id = ?";
+            PreparedStatement pstmt = c.prepareStatement(query);
+            
+            pstmt.setInt(1, id);
+            ResultSet r = pstmt.executeQuery();
+            
+            while(r.next()){
+                p.setId(r.getInt("id"));
+                p.setName(r.getString("name"));
+                p.setBirth(r.getString("birth"));
+                p.setPhone(r.getInt("phone"));
+                p.setEmail(r.getString("email"));
+                p.setPassword(r.getString("password"));
             }
             pstmt.close();
             r.close();

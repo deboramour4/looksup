@@ -11,7 +11,7 @@
         <div class="col-sm-5 col-md-offset-2  header-login">
             <ul>
                 <%
-                    if(session.getAttribute("email") == null) {
+                    if(session.getAttribute("id") == null) {
                 %>
                 <li><a href="login.jsp">Login</a></li>
                 <li><a href="register.jsp">Cadrastre-se</a></li>

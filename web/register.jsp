@@ -67,7 +67,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			<form method="POST" action="register">
                             <div class="col-md-6 login-do">
                                 <div class="login-mail">
-                                    <input type="text" placeholder="Nome" name="name" required>
+                                    <input type="text" placeholder="Nome" name="name" required> 
                                     <i  class="glyphicon glyphicon-user"></i>
                                 </div>
                                 <div class="login-mail">
@@ -75,8 +75,16 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                                     <i  class="glyphicon glyphicon-envelope"></i>
                                 </div>
                                 <div class="login-mail">
-                                    <input type="password" placeholder="Senha" name="password" required>
-                                    <i class="glyphicon glyphicon-lock"></i>
+                                    <input type="text" placeholder="Data de nascimento" name="birth">
+                                    <i  class="glyphicon glyphicon-calendar"></i>
+                                </div>
+                                <div class="login-mail">
+                                    <input type="text" placeholder="Telefone" name="phone">
+                                    <i  class="glyphicon glyphicon-phone"></i>
+                                </div>
+                                <div class="login-mail">
+                                    <input id="pass" type="password" placeholder="Senha" name="password" required>
+                                    <i id="see-pass" class="glyphicon glyphicon-eye-open"></i>
                                 </div>
                                 <a class="news-letter " href="#">
                                     <label class="checkbox1"><input type="checkbox" name="checkbox" ><i> </i>Lembrar senha</label>
@@ -132,6 +140,22 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	<script src="js/simpleCart.min.js"> </script>
 <!-- slide -->
 <script src="js/bootstrap.min.js"></script>
+<script>
+    $(document).ready(function(){
+        
+    $('#see-pass').hover(function functionName() {
+        //Change the attribute to text
+        $('#pass').attr('type', 'text');
+        $('#see-pass').removeClass('glyphicon-eye-open').addClass('glyphicon-eye-close');
+        }, function () {
+        //Change the attribute back to password
+        $('#pass').attr('type', 'password');
+        $('#see-pass').removeClass('glyphicon-eye-close').addClass('glyphicon-eye-open');
+        }
+    );
+    
+    })
+</script>
  
 </body>
 </html>

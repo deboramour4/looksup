@@ -1,8 +1,0 @@
-INSERT INTO "user" (name , email, password) VALUES ('Débora Moura', 'deboramoura@alu.ufc.br', 'debora123');
-INSERT INTO "user" (name , email, password) VALUES ('Leonardo Moreira', 'leoomoreira@virtual.ufc.br', 'leo123');
-INSERT INTO "user" (name , email, password) VALUES ('Emanuel Coutinho', 'emanuel@virtual.ufc.br', 'emanuel123');
-INSERT INTO "user" (name , email, password) VALUES ('Priscila Moura', 'priscila@gmail.com', 'pri123');
-
-INSERT INTO product (name , price, description,image,category,subcategory,rate) VALUES ('Camisa Pink', 40.00, 'Uma camisa simples, ótima para o dia a dia.','images/pc1.jpg','Roupas','Blusa',4);
-
-

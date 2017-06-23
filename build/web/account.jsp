@@ -1,9 +1,22 @@
+<%@page import="java.util.ArrayList"%>
+<%@page import="java.util.List"%>
+<%@page import="model.Address"%>
+<%@page import="model.Usuario"%>
+<jsp:useBean id="acControl" class="controller.accountController" scope="session"/>
+    
 <!--A Design by W3layouts 
 Author: W3layout
 Author URL: http://w3layouts.com
 License: Creative Commons Attribution 3.0 Unported
 License URL: http://creativecommons.org/licenses/by/3.0/
 -->
+
+<%
+    if(session.getAttribute("id") == null) {
+        response.sendRedirect("index.jsp");
+    } else {
+%>
+                
 <!DOCTYPE html>
 <html>
 <head>
@@ -66,7 +79,15 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
         <div class="col-md-9">
         <!-- client area -->
             <div class="tab-head">
-                <h3>Olá fulana!</h3>
+                <h3>Olá, <%= session.getAttribute("nome") %>!</h3>
+                <%
+                    
+                    Usuario user = new Usuario();
+                    Address ad = new Address();
+
+                    user = acControl.getUserData((Integer)session.getAttribute("id"));
+                    ad = acControl.getAddressData((Integer)session.getAttribute("id"));                   
+                %>
                 <br>
                 <nav class="nav-sidebar">
                     <ul class="nav tabs">
@@ -80,41 +101,74 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                         <div class="facts">
                             <h3>Meus dados pessoais</h3>
                             
-                            <form method="POST" action="login">
+                            <form method="POST" action="account">
                                 <p>
                                 <div class="login-do">
                                     <div class="login-mail">
-                                        <input type="text" placeholder="Nome" name="name" required>
+                                        <input type="text" placeholder="Nome" name="name" value="<%= user.getName() %>" required>
                                     </div>
                                     <div class="login-mail">
-                                        <input type="text" placeholder="Data de Nascimento" name="birth" required>
+                                        <% if(user.getBirth()==null){ %>
+                                        <input type="text" placeholder="Insira uma data de nascimento" name="birth">
+                                        <% } else { %>
+                                        <input type="text" placeholder="Data de Nascimento" name="birth" value="<%= user.getBirth() %>">
+                                        <% } %>
                                     </div>
                                     <div class="login-mail">
-                                        <input type="text" placeholder="Telefone" name="phone" required>
+                                        <% if(user.getPhone() == 0){ %>
+                                        <input type="text" placeholder="Insira um telefone" name="phone">
+                                        <% } else { %>
+                                        <input type="text" placeholder="Telefone" name="phone" value="<%= user.getPhone() %>">
+                                        <% } %>
                                     </div>
                                 </div>                                                        
                         </div>
                         
                         <div class="facts">
+                            <%
+                                if (ad.getWay() != null){
+                            %>
                             <h3>Meu endereço</h3>
                                 <p>
                                 <div class="login-do">
                                     <div class="login-mail">
-                                        <input type="text" placeholder="Rua" name="way" required>
+                                        <input type="text" placeholder="Rua" name="way" value="<%= ad.getWay() %>" required>
                                     </div>
                                     <div class="login-mail">
-                                        <input type="text" placeholder="Número" name="number" required>
+                                        <input type="text" placeholder="Número" name="number" value="<%= ad.getNumber() %>" required>
                                     </div>
                                     <div class="login-mail">
-                                        <input type="text" placeholder="Cidade" name="city" required>
+                                        <input type="text" placeholder="Cidade" name="city" value="<%= ad.getCity() %>" required>
                                     </div>
                                     <div class="login-mail">
-                                        <input type="text" placeholder="Estado" name="state" required>
+                                        <input type="text" placeholder="Estado" name="state" value="<%= ad.getState() %>" required>
                                     </div>
                                     <div class="login-mail">
-                                        <input type="text" placeholder="País" name="country" required>
+                                        <input type="text" placeholder="País" name="country" value="<%= ad.getCountry() %>"  required>
                                     </div>
                                 </div>
+                            <% } else { %>
+                            <h3>Meu endereço</h3>
+                                <p>
+                                <h5 id="ad-not">Você ainda não possui endereço</h5><br>
+                                <div class="login-do">
+                                    <div class="login-mail">
+                                        <input type="text" placeholder="Insira uma rua" name="way" required>                                       
+                                    </div>
+                                    <div class="login-mail">
+                                        <input type="text" placeholder="Insira um número" name="number" required>
+                                    </div>
+                                    <div class="login-mail">
+                                        <input type="text" placeholder="Insira uma cidade" name="city" required>
+                                    </div>
+                                    <div class="login-mail">
+                                        <input type="text" placeholder="Insira um estado" name="state" required>
+                                    </div>
+                                    <div class="login-mail">
+                                        <input type="text" placeholder="Insira um país" name="country" required>
+                                    </div>
+                                </div>
+                            <% } %>                             
                         </div>
                         
                         <div class="facts">
@@ -122,10 +176,11 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                                 <p>
                                 <div class="login-do">
                                     <div class="login-mail">
-                                        <input type="text" placeholder="Email" name="email" required>
+                                        <input type="text" placeholder="Email" name="email" value="<%= user.getEmail() %>" required>
                                     </div>
                                     <div class="login-mail">
-                                        <input type="password" placeholder="Senha" name="password" required>
+                                        <input id="pass" type="password" placeholder="Senha" name="password" value="<%= user.getPassword() %>" required>
+                                        <i id="see-pass" class="glyphicon glyphicon-eye-open"></i>
                                     </div>
                                     <a class="news-letter " href="#">
                                         <label class="checkbox1"><input type="checkbox" name="checkbox" ><i> </i>Desejo receber e-mails de ofertas promocionais da <b>LooksUp Store</b></label>
@@ -157,7 +212,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
         <div class="clearfix"> </div>
     </div>
 
-</div>	
+</div>
+
 		
 	<!--//content-->
 
@@ -178,6 +234,17 @@ $(window).load(function() {
     animation: "slide",
     controlNav: "thumbnails"
   });
+    
+  $('#see-pass').hover(function functionName() {
+        //Change the attribute to text
+        $('#pass').attr('type', 'text');
+        $('#see-pass').removeClass('glyphicon-eye-open').addClass('glyphicon-eye-close');
+        }, function () {
+        //Change the attribute back to password
+        $('#pass').attr('type', 'password');
+        $('#see-pass').removeClass('glyphicon-eye-close').addClass('glyphicon-eye-open');
+        }
+    );
 });
 </script>
 
@@ -185,6 +252,6 @@ $(window).load(function() {
 <!-- slide -->
 <script src="js/bootstrap.min.js"></script>
 
-
 </body>
 </html>
+<% } %>

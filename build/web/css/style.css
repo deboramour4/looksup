@@ -918,6 +918,10 @@ ul.product-qty {
 	padding: 0;
 	list-style: none;
 }
+
+#ad-not{
+    color: #F67777;
+}
 .product-qty span {
 	color: #000;
 	font-size:1.2em;

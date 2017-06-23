@@ -19,14 +19,14 @@ public class registerController extends HttpServlet {
         
         String name = request.getParameter("name");
         String email = request.getParameter("email");
+        String birth = request.getParameter("birth");
+        int phone = Integer.parseInt(request.getParameter("phone"));
         String password = request.getParameter("password");
         
         UsuarioDAO dao = new UsuarioDAO();
         
-        boolean result = dao.addUser(name, email, password);
-        
-        System.out.println("result é: "+result);
-        
+        boolean result = dao.addUser(name, email, birth, phone, password);
+                
         if(result){
             response.sendRedirect("index.jsp");
         } else {
