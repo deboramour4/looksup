@@ -6,13 +6,13 @@ package model;
  */
 public class Produto {
     private int id;
-    private String nome;
-    private float preco;
-    private String categoria;
-    private String subcategoria;
-    private String descricao;
-    private String imagem; 
-    private int avaliacao;
+    private String name;
+    private float price;
+    private String category;
+    private String subcategory;
+    private String description;
+    private String image; 
+    private int quantity;
 
     public int getId() {
         return id;
@@ -22,60 +22,60 @@ public class Produto {
         this.id = id;
     }
 
-    public String getNome() {
-        return nome;
+    public String getName() {
+        return name;
     }
 
-    public void setNome(String nome) {
-        this.nome = nome;
+    public void setName(String name) {
+        this.name = name;
     }
 
-    public float getPreco() {
-        return preco;
+    public float getPrice() {
+        return price;
     }
 
-    public void setPreco(float preco) {
-        this.preco = preco;
+    public void setPrice(float price) {
+        this.price = price;
     }
 
-    public String getCategoria() {
-        return categoria;
+    public String getCategory() {
+        return category;
     }
 
-    public void setCategoria(String categoria) {
-        this.categoria = categoria;
+    public void setCategory(String category) {
+        this.category = category;
     }
 
-    public String getSubcategoria() {
-        return subcategoria;
+    public String getSubcategory() {
+        return subcategory;
     }
 
-    public void setSubcategoria(String subcategoria) {
-        this.subcategoria = subcategoria;
+    public void setSubcategory(String subcategory) {
+        this.subcategory = subcategory;
     }
 
-    public String getDescricao() {
-        return descricao;
+    public String getDescription() {
+        return description;
     }
 
-    public void setDescricao(String descricao) {
-        this.descricao = descricao;
+    public void setDescription(String description) {
+        this.description = description;
     }
 
-    public String getImagem() {
-        return imagem;
+    public String getImage() {
+        return image;
     }
 
-    public void setImagem(String imagem) {
-        this.imagem = imagem;
+    public void setImage(String image) {
+        this.image = image;
     }
 
-    public int getAvaliacao() {
-        return avaliacao;
+    public int getQuantity() {
+        return quantity;
     }
 
-    public void setAvaliacao(int avaliacao) {
-        this.avaliacao = avaliacao;
+    public void setQuantity(int quantity) {
+        this.quantity = quantity;
     }
     
 }

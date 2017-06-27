@@ -347,10 +347,15 @@ a.buy-now:hover{
     float: right;
 }
  .mid-1 span{
-	font-size: 0.9em;
+    font-size: 0.9em;
     color: #F67777;
-    line-height: 1.8em;
+    line-height: 1em;
     font-family: 'Ubuntu-Bold';
+}
+
+.subcategory{
+    font-size: 0.8em !important ; 
+  font-family: 'Ubuntu' !important;
 }
 /*----*/
 /*-----------------------------------------------------------------------------------*/
@@ -503,6 +508,11 @@ a.buy-now:hover{
 }
 .img {
     float: right;
+}
+
+.item_price {
+    color: #333;
+    font-size: 1.3em;
 }
 /*----*/
 .mid-1 h6 {
@@ -1048,7 +1058,7 @@ nav.nav-sidebar {
 	border: none;
 	outline:none;
 	font-size: 0.9em;
-    color: #999;
+    color: #222;
     width: 95%;
 }
 .login-do input[type="submit"]{
@@ -2109,6 +2119,7 @@ label.line {
 .mid-1 span {
     font-size: 0.8em;
 }
+
 .mid-1 h6 {
     font-size: 0.8em;
 }

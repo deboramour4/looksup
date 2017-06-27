@@ -2,13 +2,13 @@ package model;
 
 /**
  *
- * @author aluno
+ * @author Debora
  */
 public class Pedido {
     private int id;
-    private int id_usuario;
-    private float valor;
-    private String data;
+    private int id_user;
+    private float value;
+    private String date;
 
     public int getId() {
         return id;
@@ -18,28 +18,28 @@ public class Pedido {
         this.id = id;
     }
 
-    public int getId_usuario() {
-        return id_usuario;
+    public int getId_user() {
+        return id_user;
     }
 
-    public void setId_usuario(int id_usuario) {
-        this.id_usuario = id_usuario;
+    public void setId_user(int id_user) {
+        this.id_user = id_user;
     }
 
-    public float getValor() {
-        return valor;
+    public float getValue() {
+        return value;
     }
 
-    public void setValor(float valor) {
-        this.valor = valor;
+    public void setValue(float value) {
+        this.value = value;
     }
 
-    public String getData() {
-        return data;
+    public String getDate() {
+        return date;
     }
 
-    public void setData(String data) {
-        this.data = data;
+    public void setDate(String date) {
+        this.date = date;
     }
         
 }

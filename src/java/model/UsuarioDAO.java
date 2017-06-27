@@ -22,7 +22,8 @@ public class UsuarioDAO {
         
         try {
             Class.forName("org.postgresql.Driver");
-            Connection c = DriverManager.getConnection("jdbc:postgresql://localhost:5432/looksup", "postgres", "debora123");
+            //Connection c = DriverManager.getConnection("jdbc:postgresql://localhost:5432/looksup", "postgres", "debora123");
+            Connection c = DriverManager.getConnection("jdbc:postgresql://localhost:5432/looksup", "postgres", "ufc123");
             
             Statement s = c.createStatement();
             ResultSet r = s.executeQuery("SELECT * FROM user");
@@ -54,7 +55,8 @@ public class UsuarioDAO {
     public boolean addUser(String name, String email,String birth, int phone, String password) { //SOMENTE E-MAIL QUE NAO ESTEJA CADASTRADO
         try {
             Class.forName("org.postgresql.Driver");
-            Connection c = DriverManager.getConnection("jdbc:postgresql://localhost:5432/looksup", "postgres", "debora123");
+            //Connection c = DriverManager.getConnection("jdbc:postgresql://localhost:5432/looksup", "postgres", "debora123");
+            Connection c = DriverManager.getConnection("jdbc:postgresql://localhost:5432/looksup", "postgres", "ufc123");
             
             String query = "INSERT INTO \"user\" (name , email, birth, phone, password) VALUES (?, ?, ?, ?, ?)";
             PreparedStatement pstmt = c.prepareStatement(query);
@@ -84,7 +86,8 @@ public class UsuarioDAO {
         
         try {
             Class.forName("org.postgresql.Driver");
-            Connection c = DriverManager.getConnection("jdbc:postgresql://localhost:5432/looksup", "postgres", "debora123");
+            //Connection c = DriverManager.getConnection("jdbc:postgresql://localhost:5432/looksup", "postgres", "debora123");
+            Connection c = DriverManager.getConnection("jdbc:postgresql://localhost:5432/looksup", "postgres", "ufc123");
             
             String query = "SELECT * FROM \"user\" WHERE email = ?";
             PreparedStatement pstmt = c.prepareStatement(query);
@@ -118,7 +121,8 @@ public class UsuarioDAO {
         
         try {
             Class.forName("org.postgresql.Driver");
-            Connection c = DriverManager.getConnection("jdbc:postgresql://localhost:5432/looksup", "postgres", "debora123");
+            //Connection c = DriverManager.getConnection("jdbc:postgresql://localhost:5432/looksup", "postgres", "debora123");
+            Connection c = DriverManager.getConnection("jdbc:postgresql://localhost:5432/looksup", "postgres", "ufc123");
             
             String query = "SELECT * FROM \"user\" WHERE id = ?";
             PreparedStatement pstmt = c.prepareStatement(query);

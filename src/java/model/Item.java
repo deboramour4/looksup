@@ -2,13 +2,14 @@ package model;
 
 /**
  *
- * @author aluno
+ * @author Debora
  */
 public class Item {
     private int id;
-    private int id_produto;
-    private int id_pedido;
-    private int quantidade;
+    private int id_product;
+    private int id_order;
+    private int quantity;
+    private char size;
 
     public int getId() {
         return id;
@@ -18,28 +19,36 @@ public class Item {
         this.id = id;
     }
 
-    public int getId_produto() {
-        return id_produto;
+    public int getId_product() {
+        return id_product;
     }
 
-    public void setId_produto(int id_produto) {
-        this.id_produto = id_produto;
+    public void setId_product(int id_product) {
+        this.id_product = id_product;
     }
 
-    public int getId_pedido() {
-        return id_pedido;
+    public int getId_order() {
+        return id_order;
     }
 
-    public void setId_pedido(int id_pedido) {
-        this.id_pedido = id_pedido;
+    public void setId_order(int id_order) {
+        this.id_order = id_order;
     }
 
-    public int getQuantidade() {
-        return quantidade;
+    public int getQuantity() {
+        return quantity;
     }
 
-    public void setQuantidade(int quantidade) {
-        this.quantidade = quantidade;
+    public void setQuantity(int quantity) {
+        this.quantity = quantity;
     }
-    
+
+    public char getSize() {
+        return size;
+    }
+
+    public void setSize(char size) {
+        this.size = size;
+    }
+
 }

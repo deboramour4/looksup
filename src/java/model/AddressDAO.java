@@ -20,7 +20,8 @@ public class AddressDAO {
     public boolean addAddress(String way, int number, String city, String state, String country, int id_user) {
         try {
             Class.forName("org.postgresql.Driver");
-            Connection c = DriverManager.getConnection("jdbc:postgresql://localhost:5432/looksup", "postgres", "debora123");
+            //Connection c = DriverManager.getConnection("jdbc:postgresql://localhost:5432/looksup", "postgres", "debora123");
+            Connection c = DriverManager.getConnection("jdbc:postgresql://localhost:5432/looksup", "postgres", "ufc123");
             
             String query = "INSERT INTO address (way , number, city, state, country, id_user) VALUES (?, ?, ?, ?, ?, ?)";
             PreparedStatement pstmt = c.prepareStatement(query);
@@ -51,7 +52,8 @@ public class AddressDAO {
         
         try {
             Class.forName("org.postgresql.Driver");
-            Connection c = DriverManager.getConnection("jdbc:postgresql://localhost:5432/looksup", "postgres", "debora123");
+            //Connection c = DriverManager.getConnection("jdbc:postgresql://localhost:5432/looksup", "postgres", "debora123");
+            Connection c = DriverManager.getConnection("jdbc:postgresql://localhost:5432/looksup", "postgres", "ufc123");
             
             String query = "SELECT * FROM address WHERE id_user = ?";
             PreparedStatement pstmt = c.prepareStatement(query);
