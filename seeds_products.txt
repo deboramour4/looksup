@@ -5,4 +5,6 @@ INSERT into product (name,price,description,image,category,subcategory,quantity)
 
 INSERT into product (name,price,description,image,category,subcategory,quantity) VALUES('Common Day PR T', 60.00 , 'Blusa casual xadrez marrom, cinza e creme Common Day PR T. Confeccionada em tecido plano 100% Algodão. Medidas: Ombro: 10cm/ Manga: 54cm/ Busto: 130cm/ Comprimento: 83cm/ Tamanho: P, M, G, GG.','images/pc3.jpg', 'Roupas', 'Blusas', 31);
 
-INSERT into product (name,price,description,image,category,subcategory,quantity) VALUES('Common Day PS A', 55.00 , 'Blusa casual xadrez marrom, cinza e creme manga curta Common Day PS A. Confeccionada em tecido plano 100% Algodão. Medidas: Ombro: 10cm/ Manga: 22cm/ Busto: 79cm/ Comprimento: 72cm/ Tamanho: P, M.','images/pc6.jp31', 'Roupas', 'Blusas', 9);
+INSERT into product (name,price,description,image,category,subcategory,quantity) VALUES('Common Day PS A', 55.00 , 'Blusa casual xadrez marrom, cinza e creme manga curta Common Day PS A. Confeccionada em tecido plano 100% Algodão. Medidas: Ombro: 10cm/ Manga: 22cm/ Busto: 79cm/ Comprimento: 72cm/ Tamanho: P, M.','images/pc6.jpg', 'Roupas', 'Blusas', 9);
+
+

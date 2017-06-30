@@ -16,6 +16,10 @@
         <servlet-name>logoutController</servlet-name>
         <servlet-class>controller.logoutController</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>categoryController</servlet-name>
+        <servlet-class>controller.categoryController</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>loginController</servlet-name>
         <url-pattern>/login</url-pattern>
@@ -31,6 +35,10 @@
     <servlet-mapping>
         <servlet-name>logoutController</servlet-name>
         <url-pattern>/logout</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>categoryController</servlet-name>
+        <url-pattern>/category</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

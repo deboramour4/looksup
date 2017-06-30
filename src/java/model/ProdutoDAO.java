@@ -2,6 +2,7 @@ package model;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
@@ -21,8 +22,8 @@ public class ProdutoDAO {
                         
         try {
             Class.forName("org.postgresql.Driver");
-            //Connection c = DriverManager.getConnection("jdbc:postgresql://localhost:5432/looksup", "postgres", "debora123");
-            Connection c = DriverManager.getConnection("jdbc:postgresql://localhost:5432/looksup", "postgres", "ufc123");
+            Connection c = DriverManager.getConnection("jdbc:postgresql://localhost:5432/looksup", "postgres", "debora123");
+            //Connection c = DriverManager.getConnection("jdbc:postgresql://localhost:5432/looksup", "postgres", "ufc123");
             
             Statement s = c.createStatement();
             ResultSet r = s.executeQuery("SELECT * FROM product");
@@ -51,6 +52,42 @@ public class ProdutoDAO {
         }
         
         return resultado;
+    }
+    
+    public Produto getProductById(int id){
+        Produto p = new Produto();
+        
+        try {
+            Class.forName("org.postgresql.Driver");
+            Connection c = DriverManager.getConnection("jdbc:postgresql://localhost:5432/looksup", "postgres", "debora123");
+            //Connection c = DriverManager.getConnection("jdbc:postgresql://localhost:5432/looksup", "postgres", "ufc123");
+            
+            String query = "SELECT * FROM product WHERE id = ?";
+            PreparedStatement pstmt = c.prepareStatement(query);
+            
+            pstmt.setInt(1, id);
+            ResultSet r = pstmt.executeQuery();
+            
+            while(r.next()){
+                p.setId(r.getInt("id"));
+                p.setName(r.getString("name"));
+                p.setPrice(r.getInt("price"));
+                p.setCategory(r.getString("category"));
+                p.setSubcategory(r.getString("subcategory"));
+                p.setDescription(r.getString("description"));
+                p.setImage(r.getString("image"));
+                p.setQuantity(r.getInt("quantity"));
+            }
+            pstmt.close();
+            r.close();
+            c.close();
+            
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(UsuarioDAO.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (SQLException ex) {
+            Logger.getLogger(UsuarioDAO.class.getName()).log(Level.SEVERE, null, ex);
+        }   
+        return p;
     }
        
 }

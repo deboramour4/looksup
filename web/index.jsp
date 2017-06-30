@@ -156,7 +156,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                                                     <img src= <%= p.getImage() %> class="img-responsive" alt="">
                                                     <div class="zoom-icon ">
                                                     <a class="picture" href=<%= p.getImage() %> rel="title" class="b-link-stripe b-animate-go  thickbox"><i class="glyphicon glyphicon-search icon "></i></a>
-                                                    <a href="single.jsp"><i class="glyphicon glyphicon-menu-right icon"></i></a>
+                                                    <a href="single.jsp?id=<%= p.getId() %>"><i class="glyphicon glyphicon-menu-right icon"></i></a>
                                                     </div>
                                                 </div>
                                                 <div class="mid-1">
@@ -164,7 +164,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                                                         <div class="women-top">
                                                             <span><%= p.getCategory() %></span> /
                                                             <span class="subcategory"><%= p.getSubcategory() %></span>
-                                                            <h6><a href="single.jsp"><%= p.getName() %></a></h6>
+                                                            <h6><a href="single.jsp?id=<%= p.getId() %>"><%= p.getName() %></a></h6>
                                                         </div>
                                                         <div class="img item_add">
                                                                 <a href="#"><img src="images/ca.png" alt=""></a>

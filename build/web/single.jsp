@@ -1,3 +1,5 @@
+<%@page import="model.Produto"%>
+<%@page import="model.ProdutoDAO"%>
 <!--A Design by W3layouts 
 Author: W3layout
 Author URL: http://w3layouts.com
@@ -56,126 +58,82 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <!--banner-->
 <div class="banner-top">
 	<div class="container">
-		<h1>Single</h1>
+		<h1>Produto</h1>
 		<em></em>
-		<h2><a href="index.html">Home</a><label>/</label>Single</h2>
+		<h2><a href="index.html">Home</a><label>/</label>Produto</h2>
 	</div>
 </div>
-<div class="single">
 
+    <%
+        //if (request.getAttribute("id") != null) {
+        
+        int id = Integer.parseInt(request.getParameter("id"));
+        
+        ProdutoDAO dao = new ProdutoDAO();
+        Produto p = dao.getProductById(id);
+        
+    %>
+    
+<div class="single">
+    <div class="login">
 <div class="container">
 <div class="col-md-9">
 	<div class="col-md-5 grid">		
 		<div class="flexslider">
 			  <ul class="slides">
-			    <li data-thumb="images/si.jpg">
-			        <div class="thumb-image"> <img src="images/si.jpg" data-imagezoom="true" class="img-responsive"> </div>
+			    <li data-thumb=<%= p.getImage() %>>
+			        <div class="thumb-image"> <img src=<%= p.getImage() %> data-imagezoom="true" class="img-responsive"> </div>
 			    </li>
-			    <li data-thumb="images/si1.jpg">
-			         <div class="thumb-image"> <img src="images/si1.jpg" data-imagezoom="true" class="img-responsive"> </div>
+			    <li data-thumb=<%= p.getImage() %>>
+			         <div class="thumb-image"> <img src=<%= p.getImage() %> data-imagezoom="true" class="img-responsive"> </div>
 			    </li>
-			    <li data-thumb="images/si2.jpg">
-			       <div class="thumb-image"> <img src="images/si2.jpg" data-imagezoom="true" class="img-responsive"> </div>
+			    <li data-thumb=<%= p.getImage() %>>
+			       <div class="thumb-image"> <img src=<%= p.getImage() %> data-imagezoom="true" class="img-responsive"> </div>
 			    </li> 
 			  </ul>
 		</div>
 	</div>	
 <div class="col-md-7 single-top-in">
-						<div class="span_2_of_a1 simpleCart_shelfItem">
-				<h3>Nam liber tempor cum</h3>
-				<p class="in-para"> There are many variations of passages of Lorem Ipsum.</p>
-			    <div class="price_single">
-				  <span class="reducedfrom item_price">$140.00</span>
-				 <div class="clearfix"></div>
-				</div>
-				<h4 class="quick">Quick Overview:</h4>
-				<p class="quick_desc"> Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim placerat facer possim assum. Typi non habent claritatem insitam; es</p>
-			    <div class="wish-list">
-				 	<ul>
-                                            <li class="wish"><a href="#"><span class="glyphicon glyphicon-check" aria-hidden="true"></span>Add to Wishlist</a></li>
-				 	</ul>
-				 </div>
-				 <div class="quantity"> 
-								<div class="quantity-select">                           
-									<div class="entry value-minus">&nbsp;</div>
-									<div class="entry value"><span>1</span></div>
-									<div class="entry value-plus active">&nbsp;</div>
-								</div>
-							</div>
+    <div class="span_2_of_a1 simpleCart_shelfItem">
+        <h3><%= p.getName() %></h3>
+        <p class="in-para"><strike>R$ <%= p.getPrice()+39 %>  </strike> <span class="reducedfrom item_price">R$<%= p.getPrice() %></span></p>
+            
+            <h4 class="quick">Descrição:</h4>
+            <p class="quick_desc"><%= p.getDescription() %></p>
+                <!-- <div class="wish-list">
+                    <ul>
+                        <li class="wish"><a href="#"><span class="glyphicon glyphicon-check" aria-hidden="true"></span>Add to Wishlist</a></li>
+                    </ul>
+                </div> -->
+            <div class="quantity"> 
+                <div class="quantity-select">                           
+                    <div class="entry value-minus">&nbsp;</div>
+                    <div class="entry value"><span>1</span></div>
+                    <div class="entry value-plus active">&nbsp;</div>
+                </div>
+            </div>
 							<!--quantity-->
 	<script>
-    $('.value-plus').on('click', function(){
-    	var divUpd = $(this).parent().find('.value'), newVal = parseInt(divUpd.text(), 10)+1;
-    	divUpd.text(newVal);
-    });
+        $('.value-plus').on('click', function(){
+            var divUpd = $(this).parent().find('.value'), newVal = parseInt(divUpd.text(), 10)+1;
+            divUpd.text(newVal);
+        });
 
-    $('.value-minus').on('click', function(){
-    	var divUpd = $(this).parent().find('.value'), newVal = parseInt(divUpd.text(), 10)-1;
-    	if(newVal>=1) divUpd.text(newVal);
-    });
+        $('.value-minus').on('click', function(){
+            var divUpd = $(this).parent().find('.value'), newVal = parseInt(divUpd.text(), 10)-1;
+            if(newVal>=1) divUpd.text(newVal);
+        });
 	</script>
 	<!--quantity-->
 				 
-			    <a href="#" class="add-to item_add hvr-skew-backward">Add to cart</a>
-			<div class="clearfix"> </div>
-			</div>
+        <a href="#" class="add-to item_add hvr-skew-backward">Adicionar ao carrinho</a>
+        <div class="clearfix"> </div>
+    </div>
 		
-					</div>
-			<div class="clearfix"> </div>
+</div>
+<div class="clearfix"> </div>
 			<!---->
                         
-<!-- client area -->
-<div class="tab-head">
-    <nav class="nav-sidebar">
-        <ul class="nav tabs">
-            <li class="active"><a href="#tab1" data-toggle="tab">Product Description</a></li>
-            <li class=""><a href="#tab2" data-toggle="tab">Additional Information</a></li> 
-            <li class=""><a href="#tab3" data-toggle="tab">Reviews</a></li>  
-        </ul>
-    </nav>
-    <div class="tab-content one">
-        <div class="tab-pane active text-style" id="tab1">
-            <div class="facts">
-                <p > There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words, combined </p>
-                    <ul>
-                        <li><span class="glyphicon glyphicon-ok" aria-hidden="true"></span>Research</li>
-                        <li><span class="glyphicon glyphicon-ok" aria-hidden="true"></span>Design and Development</li>
-                        <li><span class="glyphicon glyphicon-ok" aria-hidden="true"></span>Porting and Optimization</li>
-                        <li><span class="glyphicon glyphicon-ok" aria-hidden="true"></span>System integration</li>
-                        <li><span class="glyphicon glyphicon-ok" aria-hidden="true"></span>Verification, Validation and Testing</li>
-                        <li><span class="glyphicon glyphicon-ok" aria-hidden="true"></span>Maintenance and Support</li>
-                    </ul>         
-            </div>
-        </div>
-        <div class="tab-pane text-style" id="tab2">
-            <div class="facts">									
-                <p> Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections </p>
-                <ul>
-                    <li><span class="glyphicon glyphicon-ok" aria-hidden="true"></span>Multimedia Systems</li>
-                    <li><span class="glyphicon glyphicon-ok" aria-hidden="true"></span>Digital media adapters</li>
-                    <li><span class="glyphicon glyphicon-ok" aria-hidden="true"></span>Set top boxes for HDTV and IPTV Player  </li>
-                </ul>
-            </div>	
-        </div>
-        
-        <div class="tab-pane text-style" id="tab3">
-            <div class="facts">
-                <p > There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words, combined </p>
-                <ul>
-                     <li><span class="glyphicon glyphicon-ok" aria-hidden="true"></span>Research</li>
-                     <li><span class="glyphicon glyphicon-ok" aria-hidden="true"></span>Design and Development</li>
-                     <li><span class="glyphicon glyphicon-ok" aria-hidden="true"></span>Porting and Optimization</li>
-                     <li><span class="glyphicon glyphicon-ok" aria-hidden="true"></span>System integration</li>
-                     <li><span class="glyphicon glyphicon-ok" aria-hidden="true"></span>Verification, Validation and Testing</li>
-                     <li><span class="glyphicon glyphicon-ok" aria-hidden="true"></span>Maintenance and Support</li>
-                </ul>     
-            </div>	
-
-         </div>
-    </div>
-    <div class="clearfix"></div>
-</div>                      
-<!-- client area -->
 			<!---->	
 </div>
 <!----->
@@ -185,51 +143,37 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				<div class=" rsidebar span_1_of_left">
 						<h4 class="cate">Categorias</h4>
 							 <ul class="menu-drop">
-							<li class="item1"><a href="#">Roupas</a>
+							<li class="item1"><a href="product.jsp?category=roupas">Roupas</a>
 								<ul class="cute">
-									<li class="subitem1"><a href="product.html">Cute Kittens </a></li>
-									<li class="subitem2"><a href="product.html">Strange Stuff </a></li>
-									<li class="subitem3"><a href="product.html">Automatic Fails </a></li>
-								</ul>
+									<li class="subitem1"><a href="product.jsp?subcategory=blusas">Blusas</a></li>
+									<li class="subitem2"><a href="product.jsp?subcategory=saias">Saias</a></li>
+                                                                        <li class="subitem3"><a href="product.jsp?subcategory=casacos">Casacos</a></li>
+                                                                        <li class="subitem3"><a href="product.jsp?subcategory=jeans">Jeans</a></li>
+                                                                </ul>
 							</li>
-							<li class="item2"><a href="#">Acessórios</a>
+							<li class="item2"><a href="product.jsp?category=acessorios">Acessórios</a>
 								<ul class="cute">
-									<li class="subitem1"><a href="product.html">Cute Kittens </a></li>
-									<li class="subitem2"><a href="product.html">Strange Stuff </a></li>
-									<li class="subitem3"><a href="product.html">Automatic Fails </a></li>
+									<li class="subitem1"><a href="product.jsp?subcategory=brincos">Brincos</a></li>
+									<li class="subitem2"><a href="product.jsp?subcategory=colares">Colares</a></li>
+                                                                        <li class="subitem3"><a href="product.jsp?subcategory=pulseiras">Pulseiras</a></li>
+                                                                        <li class="subitem3"><a href="product.jsp?subcategory=relogios">Relógios</a></li>
+                                                                        <li class="subitem3"><a href="product.jsp?subcategory=aneis">Anéis</a></li>
 								</ul>
+                                                            
 							</li>
-							<li class="item3"><a href="#">Calçados</a>
+							<li class="item3"><a href="product.jsp?category=calcados">Calçados</a>
 								<ul class="cute">
-									<li class="subitem1"><a href="product.html">Cute Kittens </a></li>
-									<li class="subitem2"><a href="product.html">Strange Stuff </a></li>
-									<li class="subitem3"><a href="product.html">Automatic Fails</a></li>
+									<li class="subitem1"><a href="product.jsp?subcategory=saltos">Saltos</a></li>
+									<li class="subitem2"><a href="product.jsp?subcategory=sandalias">Sandálias</a></li>
+									<li class="subitem3"><a href="product.jsp?subcategory=tenis">Tênis</a></li>
 								</ul>
 							</li>
 						</ul>
 					</div>
 				<!--initiate accordion-->
-						<script type="text/javascript">
-							$(function() {
-							    var menu_ul = $('.menu-drop > li > ul'),
-							           menu_a  = $('.menu-drop > li > a');
-							    menu_ul.hide();
-							    menu_a.click(function(e) {
-							        e.preventDefault();
-							        if(!$(this).hasClass('active')) {
-							            menu_a.removeClass('active');
-							            menu_ul.filter(':visible').slideUp('normal');
-							            $(this).addClass('active').next().stop(true,true).slideDown('normal');
-							        } else {
-							            $(this).removeClass('active');
-							            $(this).next().stop(true,true).slideUp('normal');
-							        }
-							    });
-							
-							});
-						</script>
+
 <!--//menu-->
- <section  class="sky-form">
+                                <!-- <section  class="sky-form">
 					<h4 class="cate">Discounts</h4>
 					 <div class="row row1 scroll-pane">
 						 <div class="col col-4">
@@ -245,7 +189,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				 </section> 				 				 
 				 
 					
-					 <!---->
+					 
 					 <section  class="sky-form">
 						<h4 class="cate">Type</h4>
 							<div class="row row1 scroll-pane">
@@ -263,7 +207,6 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 								</div>
 							</div>
 				   </section>
-				   	<!-- <section  class="sky-form">
 						<h4 class="cate">Brand</h4>
 							<div class="row row1 scroll-pane">
 								<div class="col col-4">
@@ -282,7 +225,11 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				   </section>	--> 	
 		</div>
 		<div class="clearfix"> </div>
-	</div>
+        </div>
+    </div>
+                <% /*} else { 
+                    response.sendRedirect("404.jsp");
+                } */%>
 	
 			<!--brand-->
 		<div class="container">

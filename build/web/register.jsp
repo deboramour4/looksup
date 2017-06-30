@@ -63,6 +63,9 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 </div>
 <!--login-->
 <div class="container">
+                <%
+                    if(session.getAttribute("id") == null) {
+                %>
 		<div class="login">
 			<form method="POST" action="register">
                             <div class="col-md-6 login-do">
@@ -75,11 +78,11 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                                     <i  class="glyphicon glyphicon-envelope"></i>
                                 </div>
                                 <div class="login-mail">
-                                    <input type="text" placeholder="Data de nascimento" name="birth">
+                                    <input type="text" placeholder="Data de nascimento (Opcional)" name="birth">
                                     <i  class="glyphicon glyphicon-calendar"></i>
                                 </div>
                                 <div class="login-mail">
-                                    <input type="text" placeholder="Telefone" name="phone">
+                                    <input type="text" placeholder="Telefone (Opcional)" name="phone">
                                     <i  class="glyphicon glyphicon-phone"></i>
                                 </div>
                                 <div class="login-mail">
@@ -130,7 +133,23 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			<!--//brand-->
 	
 	<!--//content-->
-
+                <%
+                    } else { 
+                %>
+                <div class="container">
+			<div class="col-md-6 login-do">
+                            <h3>Cadastro realizado com sucesso!</h3>
+                            <p>Se você quiser terminar de configurar a sua conta e o seu endereço de entrega, vá para <b>Minha Conta</b></p>
+                            <a href="account.jsp" class="hvr-skew-backward">Minha Conta</a>
+                        </div>
+                        <div class="col-md-6 login-right">
+                            <p>Se você deseja voltar para a loja e continuar suas compras, vá para <b>Looks Up : Store</b></p>
+                            <a href="account.jsp" class="hvr-skew-backward">Continuar minhas compras</a>
+                        </div>    
+                </div>
+                <%
+                    }
+                %>
 <!--//footer-->
 <%@ include file= "views/footer.jsp" %>
 <!--//footer-->

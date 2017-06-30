@@ -359,120 +359,41 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				</div>
 			</div>
 			<div class="col-md-3 product-bottom">
-			<!--categories-->
+                        <!--categories-->
 				<div class=" rsidebar span_1_of_left">
-						<h4 class="cate">Categories</h4>
+						<h4 class="cate">Categorias</h4>
 							 <ul class="menu-drop">
-							<li class="item1"><a href="#">Men </a>
+							<li class="item1"><a href="product.jsp?category=roupas">Roupas</a>
 								<ul class="cute">
-									<li class="subitem1"><a href="product.html">Cute Kittens </a></li>
-									<li class="subitem2"><a href="product.html">Strange Stuff </a></li>
-									<li class="subitem3"><a href="product.html">Automatic Fails </a></li>
-								</ul>
+									<li class="subitem1"><a href="product.jsp?subcategory=blusas">Blusas</a></li>
+									<li class="subitem2"><a href="product.jsp?subcategory=saias">Saias</a></li>
+                                                                        <li class="subitem3"><a href="product.jsp?subcategory=casacos">Casacos</a></li>
+                                                                        <li class="subitem3"><a href="product.jsp?subcategory=jeans">Jeans</a></li>
+                                                                </ul>
 							</li>
-							<li class="item2"><a href="#">Women </a>
+							<li class="item2"><a href="product.jsp?category=acessorios">Acessórios</a>
 								<ul class="cute">
-									<li class="subitem1"><a href="product.html">Cute Kittens </a></li>
-									<li class="subitem2"><a href="product.html">Strange Stuff </a></li>
-									<li class="subitem3"><a href="product.html">Automatic Fails </a></li>
+									<li class="subitem1"><a href="product.jsp?subcategory=brincos">Brincos</a></li>
+									<li class="subitem2"><a href="product.jsp?subcategory=colares">Colares</a></li>
+                                                                        <li class="subitem3"><a href="product.jsp?subcategory=pulseiras">Pulseiras</a></li>
+                                                                        <li class="subitem3"><a href="product.jsp?subcategory=relogios">Relógios</a></li>
+                                                                        <li class="subitem3"><a href="product.jsp?subcategory=aneis">Anéis</a></li>
 								</ul>
+                                                            
 							</li>
-							<li class="item3"><a href="#">Kids</a>
+							<li class="item3"><a href="product.jsp?category=calcados">Calçados</a>
 								<ul class="cute">
-									<li class="subitem1"><a href="product.html">Cute Kittens </a></li>
-									<li class="subitem2"><a href="product.html">Strange Stuff </a></li>
-									<li class="subitem3"><a href="product.html">Automatic Fails</a></li>
-								</ul>
-							</li>
-							<li class="item4"><a href="#">Accessories</a>
-								<ul class="cute">
-									<li class="subitem1"><a href="product.html">Cute Kittens </a></li>
-									<li class="subitem2"><a href="product.html">Strange Stuff </a></li>
-									<li class="subitem3"><a href="product.html">Automatic Fails</a></li>
-								</ul>
-							</li>
-									
-							<li class="item4"><a href="#">Shoes</a>
-								<ul class="cute">
-									<li class="subitem1"><a href="product.html">Cute Kittens </a></li>
-									<li class="subitem2"><a href="product.html">Strange Stuff </a></li>
-									<li class="subitem3"><a href="product.html">Automatic Fails </a></li>
+									<li class="subitem1"><a href="product.jsp?subcategory=saltos">Saltos</a></li>
+									<li class="subitem2"><a href="product.jsp?subcategory=sandalias">Sandálias</a></li>
+									<li class="subitem3"><a href="product.jsp?subcategory=tenis">Tênis</a></li>
 								</ul>
 							</li>
 						</ul>
 					</div>
-				<!--initiate accordion-->
-						<script type="text/javascript">
-							$(function() {
-							    var menu_ul = $('.menu-drop > li > ul'),
-							           menu_a  = $('.menu-drop > li > a');
-							    menu_ul.hide();
-							    menu_a.click(function(e) {
-							        e.preventDefault();
-							        if(!$(this).hasClass('active')) {
-							            menu_a.removeClass('active');
-							            menu_ul.filter(':visible').slideUp('normal');
-							            $(this).addClass('active').next().stop(true,true).slideDown('normal');
-							        } else {
-							            $(this).removeClass('active');
-							            $(this).next().stop(true,true).slideUp('normal');
-							        }
-							    });
-							
-							});
-						</script>
 <!--//menu-->
- <section  class="sky-form">
-					<h4 class="cate">Discounts</h4>
-					 <div class="row row1 scroll-pane">
-						 <div class="col col-4">
-								<label class="checkbox"><input type="checkbox" name="checkbox" checked=""><i></i>Upto - 10% (20)</label>
-						 </div>
-						 <div class="col col-4">
-								<label class="checkbox"><input type="checkbox" name="checkbox"><i></i>40% - 50% (5)</label>
-								<label class="checkbox"><input type="checkbox" name="checkbox"><i></i>30% - 20% (7)</label>
-								<label class="checkbox"><input type="checkbox" name="checkbox"><i></i>10% - 5% (2)</label>
-								<label class="checkbox"><input type="checkbox" name="checkbox"><i></i>Other(50)</label>
-						 </div>
-					 </div>
-				 </section> 				 				 
-				 
-					
-					 <!---->
-					 <section  class="sky-form">
-						<h4 class="cate">Type</h4>
-							<div class="row row1 scroll-pane">
-								<div class="col col-4">
-									<label class="checkbox"><input type="checkbox" name="checkbox" checked=""><i></i>Sofa Cum Beds (30)</label>
-								</div>
-								<div class="col col-4">
-									<label class="checkbox"><input type="checkbox" name="checkbox"><i></i>Bags  (30)</label>
-									<label class="checkbox"><input type="checkbox" name="checkbox"><i></i>Caps & Hats (30)</label>
-									<label class="checkbox"><input type="checkbox" name="checkbox"><i></i>Jackets & Coats   (30)</label>
-									<label class="checkbox"><input type="checkbox" name="checkbox"><i></i>Jeans  (30)</label>
-									<label class="checkbox"><input type="checkbox" name="checkbox"><i></i>Shirts   (30)</label>
-									<label class="checkbox"><input type="checkbox" name="checkbox"><i></i>Sunglasses  (30)</label>
-									<label class="checkbox"><input type="checkbox" name="checkbox"><i></i>Swimwear  (30)</label>
-								</div>
-							</div>
-				   </section>
-				   		<section  class="sky-form">
-						<h4 class="cate">Brand</h4>
-							<div class="row row1 scroll-pane">
-								<div class="col col-4">
-									<label class="checkbox"><input type="checkbox" name="checkbox" checked=""><i></i>Roadstar</label>
-								</div>
-								<div class="col col-4">
-									<label class="checkbox"><input type="checkbox" name="checkbox"><i></i>Levis</label>
-									<label class="checkbox"><input type="checkbox" name="checkbox"><i></i>Persol</label>
-									<label class="checkbox"><input type="checkbox" name="checkbox"><i></i>Nike</label>
-									<label class="checkbox"><input type="checkbox" name="checkbox"><i></i>Edwin</label>
-									<label class="checkbox"><input type="checkbox" name="checkbox" ><i></i>New Balance</label>
-									<label class="checkbox"><input type="checkbox" name="checkbox"><i></i>Paul Smith</label>
-									<label class="checkbox"><input type="checkbox" name="checkbox"><i></i>Ray-Ban</label>
-								</div>
-							</div>
-				   </section>		
+				 				 
+				 										
+				   				
 		</div>
 			<div class="clearfix"></div>
 			</div>
