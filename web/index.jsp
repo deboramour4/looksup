@@ -167,7 +167,12 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                                                             <h6><a href="single.jsp?id=<%= p.getId() %>"><%= p.getName() %></a></h6>
                                                         </div>
                                                         <div class="img item_add">
-                                                                <a href="cart.jsp?id=<%= p.getId() %>"><img src="images/ca.png" alt=""></a>
+                                                                <a href="addCart?id=<%= p.getId() %>"><img src="images/ca.png" alt=""></a>
+                                                                
+                                                                
+                                                                <!--
+                                                                <form action="addCart"><input type="submit" name="id" value="<%= p.getId() %>" ><img src="images/ca.png" alt=""></form>
+                                                                -->
                                                         </div>
                                                         <div class="clearfix"></div>
                                                         </div>

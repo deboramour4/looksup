@@ -24,7 +24,7 @@
                 <%
                     }
                 %>
-                <li><a href="checkout.jsp">Carrinho</a></li>
+                <li><a href="cart">Carrinho</a></li>
             </ul>
         </div>
         <div class="col-sm-5 header-social">		
