@@ -1325,18 +1325,16 @@ a.at-in {
 .ring-in{
   position: relative;
 }
-.close1, .close2, .close3 {
+.close-item {
   background: url('../images/close.png') no-repeat 0px 0px ;
   cursor: pointer;
   width: 28px;
   height: 28px;
-  position: absolute;
-  right: 5px;
-  bottom: 10px;
   -webkit-transition: color 0.2s ease-in-out;
   -moz-transition: color 0.2s ease-in-out;
   -o-transition: color 0.2s ease-in-out;
   transition: color 0.2s ease-in-out;
+    padding-left: 25px;
 }
 /*--//checkout--*/
 /*--wish--*/
@@ -1686,8 +1684,9 @@ h1.grid2 {
 }
 /*----*/
 td.add-check a{
-	    width: 119px;
+    width: 119px;
 }
+
 .check-out {
     padding: 3em 0em 0;
 }
@@ -1781,9 +1780,6 @@ ul.nav_1 li {
 }
 th {
     font-size: 1em;
-}
-.close1, .close2, .close3 {
-    bottom: 3px;
 }
 .check-out {
     padding: 4em 0em 0;
