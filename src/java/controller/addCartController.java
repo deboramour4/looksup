@@ -77,7 +77,6 @@ protected void doGet(HttpServletRequest request, HttpServletResponse response)
                                 }
                             }
                         }
-                        System.out.println(row+ " string final ------------QUANT. "+qnt+"---------------------------------");
                         c.setValue(row);
                         c.setMaxAge(Integer.MAX_VALUE);
                         response.addCookie(c);

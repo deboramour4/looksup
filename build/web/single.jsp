@@ -105,14 +105,18 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                         <li class="wish"><a href="#"><span class="glyphicon glyphicon-check" aria-hidden="true"></span>Add to Wishlist</a></li>
                     </ul>
                 </div> -->
+                
+            <!-- quantidade -->    
             <div class="quantity"> 
                 <div class="quantity-select">                           
                     <div class="entry value-minus">&nbsp;</div>
-                    <div class="entry value"><span id="numQ">1</span></div>
+                    <div class="entry value"><span>1</span></div>
                     <div class="entry value-plus active">&nbsp;</div>
                 </div>
             </div>
-							<!--quantity-->
+            <!-- quantidade -->
+            
+            <!--quantity-->
 	<script>
         $('.value-plus').on('click', function(){
             var divUpd = $(this).parent().find('.value'), newVal = parseInt(divUpd.text(), 10)+1;
@@ -127,7 +131,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
         
         
         function gotoCart(){
-            var numQ = $('#numQ').text();
+            var numQ = $('.value').text();
             window.location.replace("addCart?id=<%= p.getId() %>&qnt="+numQ);
             //$('#qntJS').attr("href","addCart?id=<%= p.getId() %>&qnt="+numQ);
         }
