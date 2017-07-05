@@ -82,13 +82,13 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 		<div class="flexslider">
 			  <ul class="slides">
 			    <li data-thumb=<%= p.getImage() %>>
-			        <div class="thumb-image"> <img src=<%= p.getImage() %> data-imagezoom="true" class="img-responsive"> </div>
+			        <div class="thumb-image"> <img src="<%= p.getImage() %>" data-imagezoom="true" class="img-responsive"> </div>
 			    </li>
 			    <li data-thumb=<%= p.getImage() %>>
-			         <div class="thumb-image"> <img src=<%= p.getImage() %> data-imagezoom="true" class="img-responsive"> </div>
+			         <div class="thumb-image"> <img src="<%= p.getImage() %>" data-imagezoom="true" class="img-responsive"> </div>
 			    </li>
 			    <li data-thumb=<%= p.getImage() %>>
-			       <div class="thumb-image"> <img src=<%= p.getImage() %> data-imagezoom="true" class="img-responsive"> </div>
+			       <div class="thumb-image"> <img src="<%= p.getImage() %>" data-imagezoom="true" class="img-responsive"> </div>
 			    </li> 
 			  </ul>
 		</div>
@@ -108,7 +108,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
             <div class="quantity"> 
                 <div class="quantity-select">                           
                     <div class="entry value-minus">&nbsp;</div>
-                    <div class="entry value"><span>1</span></div>
+                    <div class="entry value"><span id="numQ">1</span></div>
                     <div class="entry value-plus active">&nbsp;</div>
                 </div>
             </div>
@@ -123,10 +123,19 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
             var divUpd = $(this).parent().find('.value'), newVal = parseInt(divUpd.text(), 10)-1;
             if(newVal>=1) divUpd.text(newVal);
         });
+        
+        
+        
+        function gotoCart(){
+            var numQ = $('#numQ').text();
+            window.location.replace("addCart?id=<%= p.getId() %>&qnt="+numQ);
+            //$('#qntJS').attr("href","addCart?id=<%= p.getId() %>&qnt="+numQ);
+        }
+        
 	</script>
 	<!--quantity-->
-				 
-        <a href="#" class="add-to item_add hvr-skew-backward">Adicionar ao carrinho</a>
+			 
+        <a  id="qntJS" onclick="gotoCart()" class="add-to item_add hvr-skew-backward">Adicionar ao carrinho</a>
         <div class="clearfix"> </div>
     </div>
 		

@@ -2,6 +2,7 @@
 <%@page import="model.Produto"%>
 <%@page import="java.util.ArrayList"%>
 <jsp:useBean id="cartControl" class="controller.cartController" scope="session"/>
+
 <!--A Design by W3layouts 
 Author: W3layout
 Author URL: http://w3layouts.com
@@ -65,24 +66,16 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	</div>
 </div>
 <!--login-->
-	<script>
-            $(document).ready(function(c) {
-                $('#close1').on('click', function(c){
-                        $('.cart-header').fadeOut('slow', function(c){
-                                $('.cart-header').remove();
-                        });
-                    });	  
-                });
-        </script>
 
 <div class="check-out">
 <div class="container">
             <%
                 List<Produto> cookiesProd = new ArrayList<Produto>();
                         
-                cookiesProd = cartControl.getCookiesProd();
+                cookiesProd = (ArrayList)session.getAttribute("cookiesProd");//produtos
+                int qntProd[] = (int[])session.getAttribute("qntProd"); //quantidades
                 
-                if (cookiesProd == null && cookiesProd.size() > 0){
+                if (cookiesProd == null){
             %>	
             <h3>Não há nada no carrinho.</h3>
             <%
@@ -94,16 +87,18 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
               <tr>
                 <th class="table-grid">Item</th>		
                 <th>Preço</th>
-                <th >Frete </th>
+                <th >Quant.</th>
                 <th>Subtotal</th>
               </tr>
               
               <%
+                  int cont=0;
+                  float total=0;
                   for(Produto p : cookiesProd){
               %>
               <!-- product -->
               <tr class="cart-header">
-                <td class="ring-in"><a href="single.html" class="at-in"><img src="images/ch.jpg" class="img-responsive" alt=""></a>
+                <td class="ring-in"><a href="single.html" class="at-in"><img src=<%= p.getImage() %> class="img-responsive" alt=""></a>
                 <div class="sed">
                         <h5><a href="single.html"><%= p.getName() %></a></h5>
                         <p><%= p.getDescription() %></p>
@@ -111,16 +106,29 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                 </div>
                 <div class="clearfix"> </div>
                 </td>
-                <td><%= p.getPrice() %></td>
-                <td>GRÁTIS</td>
-                <td class="item_price">$100.00</td>
-                <td class="add-check"><div class="close-item" id="close1"></div></td>
+                <td>R$  <%= p.getPrice() %></td>
+                <td>
+                    <div class="quantity"> 
+                        <div class="quantity-select">                           
+                            <div class="entry value-minus">&nbsp;</div>
+                            <div class="entry value"><span> <%= qntProd[cont]%> </span></div>
+                            <div class="entry value-plus active">&nbsp;</div>
+                        </div>
+                    </div>                                          
+                </td>
+                <td class="item_price">R$<%= p.getPrice()*qntProd[cont] %></td>
+                <td class="add-check"><a href=""><div class="close-item" id="close1"></div></a></td>
               </tr>
               <!-- product -->
             <%
-                }
+                cont ++;
+                total = total + (p.getPrice()*qntProd[cont]);
+            }
             %>
-	</table>
+            <tr>
+                <td></td><td></td><td>Total</td><td class="item_price"><%= total %></td>
+            </tr>
+        </table>
     </div>
 </div>
 	<div class="produced">
