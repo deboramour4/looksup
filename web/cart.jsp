@@ -117,7 +117,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                     </div>                                          
                 </td>
                 <td class="item_price">R$<%= p.getPrice()*qntProd[cont] %></td>
-                <td class="add-check"><a href=""><div class="close-item" id="close1"></div></a></td>
+                <td class="add-check"><a href="deleteItem?id=<%= p.getId() %>"><div class="close-item" id="close1"></div></a></td>
               </tr>
               <!-- product -->
             <%
