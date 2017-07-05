@@ -1,3 +1,7 @@
+<%@page import="java.util.List"%>
+<%@page import="model.Produto"%>
+<%@page import="java.util.ArrayList"%>
+<jsp:useBean id="cartControl" class="controller.cartController" scope="session"/>
 <!--A Design by W3layouts 
 Author: W3layout
 Author URL: http://w3layouts.com
@@ -73,7 +77,17 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 
 <div class="check-out">
 <div class="container">
-	
+            <%
+                List<Produto> cookiesProd = new ArrayList<Produto>();
+                        
+                cookiesProd = cartControl.getCookiesProd();
+                
+                if (cookiesProd == null && cookiesProd.size() > 0){
+            %>	
+            <h3>Não há nada no carrinho.</h3>
+            <%
+                } else {                
+            %>
 <div class="bs-example4" data-example-id="simple-responsive-table">
     <div class="table-responsive">
         <table class="table-heading simpleCart_shelfItem">
@@ -84,28 +98,37 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                 <th>Subtotal</th>
               </tr>
               
+              <%
+                  for(Produto p : cookiesProd){
+              %>
               <!-- product -->
               <tr class="cart-header">
                 <td class="ring-in"><a href="single.html" class="at-in"><img src="images/ch.jpg" class="img-responsive" alt=""></a>
                 <div class="sed">
-                        <h5><a href="single.html">Sed ut perspiciatis unde</a></h5>
-                        <p>(At vero eos et accusamus et iusto odio dignissimos ducimus ) </p>
+                        <h5><a href="single.html"><%= p.getName() %></a></h5>
+                        <p><%= p.getDescription() %></p>
 
                 </div>
                 <div class="clearfix"> </div>
                 </td>
-                <td>$100.00</td>
-                <td>FREE SHIPPING</td>
+                <td><%= p.getPrice() %></td>
+                <td>GRÁTIS</td>
                 <td class="item_price">$100.00</td>
                 <td class="add-check"><div class="close-item" id="close1"></div></td>
               </tr>
               <!-- product -->
+            <%
+                }
+            %>
 	</table>
     </div>
 </div>
 	<div class="produced">
-	<a href="single.html" class="hvr-skew-backward">Comprar</a>
-	 </div>
+            <a href="single.html" class="hvr-skew-backward">Comprar</a>
+	</div>
+        <%
+            }
+        %>
 </div>
 </div>
 

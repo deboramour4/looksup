@@ -18,21 +18,37 @@ import model.ProdutoDAO;
  * @author Debora
  */
 public class cartController extends HttpServlet {
-    
-     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
+    private List<Produto> cookiesProd = new ArrayList<Produto>() ;
+
+    public List<Produto> getCookiesProd() {
+        return cookiesProd;
+    }
+
+     
+     protected void service(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
 
         Cookie[] cookies = request.getCookies();
+        ProdutoDAO daoP = new ProdutoDAO();
         
-        
-        
-        if (cookies != null) { // se existem cookies, achar o cookie com a chave app.smd
+        if (cookies != null) { // se existem cookies, achar o cookie com a chave pCart
             for (Cookie c : cookies) {
-                if (c.getName().equals("app.smd")) { // se encontrou o cookie, mostrar os dados
-                    //out.println("<p>Últimos Logins: <b>" + c.getValue().replaceAll("@", "<br/>") + "</b></p>");
-                    break;
+                if (c.getName().equals("pCart")) { // se encontrou o cookie, mostrar os dados
+                    String arrayProd[] = c.getValue().split("@");
+                    for(int i=0  ; i < arrayProd.length ; i++){
+                        int idTemp = Integer.parseInt(arrayProd[i]);
+                        Produto p = daoP.getProductById(idTemp);
+                        cookiesProd.add(p);
+                    }
                 }
-            }
         }
+            
+        System.out.println(cookies+"  ---------------------------------------------");
+        System.out.println(cookiesProd+"  ---------------------------------------------");
+        
+        }
+        System.out.println("A LISTA DE COOKIES N EXISTE---------------------------------------------");
+                        
+        response.sendRedirect("cart.jsp");
     }
 }

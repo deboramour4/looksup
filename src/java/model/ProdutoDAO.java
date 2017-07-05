@@ -22,8 +22,8 @@ public class ProdutoDAO {
                         
         try {
             Class.forName("org.postgresql.Driver");
-            //Connection c = DriverManager.getConnection("jdbc:postgresql://localhost:5432/looksup", "postgres", "debora123");
-            Connection c = DriverManager.getConnection("jdbc:postgresql://localhost:5432/looksup", "postgres", "ufc123");
+            Connection c = DriverManager.getConnection("jdbc:postgresql://localhost:5432/looksup", "postgres", "debora123");
+            //Connection c = DriverManager.getConnection("jdbc:postgresql://localhost:5432/looksup", "postgres", "ufc123");
             
             Statement s = c.createStatement();
             ResultSet r = s.executeQuery("SELECT * FROM product");
@@ -59,8 +59,8 @@ public class ProdutoDAO {
         
         try {
             Class.forName("org.postgresql.Driver");
-            //Connection c = DriverManager.getConnection("jdbc:postgresql://localhost:5432/looksup", "postgres", "debora123");
-            Connection c = DriverManager.getConnection("jdbc:postgresql://localhost:5432/looksup", "postgres", "ufc123");
+            Connection c = DriverManager.getConnection("jdbc:postgresql://localhost:5432/looksup", "postgres", "debora123");
+            //Connection c = DriverManager.getConnection("jdbc:postgresql://localhost:5432/looksup", "postgres", "ufc123");
             
             String query = "SELECT * FROM product WHERE id = ?";
             PreparedStatement pstmt = c.prepareStatement(query);
@@ -89,5 +89,7 @@ public class ProdutoDAO {
         }   
         return p;
     }
+    
+   
        
 }
