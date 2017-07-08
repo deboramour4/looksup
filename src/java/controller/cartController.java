@@ -37,30 +37,34 @@ public class cartController extends HttpServlet {
             for (Cookie c : cookies) {
                 if (c.getName().equals("pCart")) { // se encontrou o cookie, mostrar os dados
                     
-                    String arrayProd[] = c.getValue().split("@");
-                    String arrayPValues[][] = new String[50][50];
-                    
-                    for(int i=0  ; i < arrayProd.length ; i++){
-                        arrayPValues[i] = arrayProd[i].split("-");
-                    }
-                    
-                    for(int i=0  ; i < arrayProd.length ; i++){
-                        for(int j=0  ; j < 2 ; j++){
-                            if(j==0){
-                                int idTemp = Integer.parseInt(arrayPValues[i][j]);
+                    if(c.getValue() != "" && c.getValue() != null){
+                        String arrayProd[] = c.getValue().split("@");
+                        String arrayPValues[][] = new String[50][50];
 
-                                Produto p = daoP.getProductById(idTemp);
-                                cookiesProd.add(p);
-                            } 
-                            if (j==1){
-                                qntProd[i] = Integer.parseInt(arrayPValues[i][j]);
-                            }   
+                        for(int i=0  ; i < arrayProd.length ; i++){
+                            arrayPValues[i] = arrayProd[i].split("-");
                         }
+
+                        for(int i=0  ; i < arrayProd.length ; i++){
+                            for(int j=0  ; j < 2 ; j++){
+                                if(j==0){
+                                    int idTemp = Integer.parseInt(arrayPValues[i][j]);
+
+                                    Produto p = daoP.getProductById(idTemp);
+                                    cookiesProd.add(p);
+                                } 
+                                if (j==1){
+                                    qntProd[i] = Integer.parseInt(arrayPValues[i][j]);
+                                }   
+                            }
+                        }
+                        session.setAttribute("cookiesProd", cookiesProd);
+                        session.setAttribute("qntProd", qntProd);
+                        find = true;
+                        response.sendRedirect("cart.jsp");
+                    } else {
+                        session.setAttribute("cookiesProd", null);
                     }
-                    session.setAttribute("cookiesProd", cookiesProd);
-                    session.setAttribute("qntProd", qntProd);
-                    find = true;
-                    response.sendRedirect("cart.jsp");
                 }
             }
             

@@ -38,7 +38,7 @@ protected void doGet(HttpServletRequest request, HttpServletResponse response)
                     break;
             }
         }
-        if (c == null) { // se não existe, é a primeira vez
+        if (c == null || c.getValue().equals("")) { // se não existe, é a primeira vez
             System.out.println("Não existem cookie com o nome pcart  ---------------------------------------------");
             c = new Cookie("pCart", id+"-"+qnt);
             c.setMaxAge(Integer.MAX_VALUE);

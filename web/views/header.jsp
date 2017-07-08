@@ -190,9 +190,9 @@
             </li>
         </ul>
         <div class="cart box_1">
-                <a href="checkout.jsp">
+                <a href="cart">
                 <h3> <div class="total">
-                    <span class="simpleCart_total"></span></div>
+                    <span class="simpleCart_total"><%= session.getAttribute("totalCart")%></span></div>
                     <img src="images/cart.png" alt=""/></h3>
                 </a>
                 <!-- provavelente esvazia o carrinho

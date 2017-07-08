@@ -121,9 +121,11 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
               </tr>
               <!-- product -->
             <%
-                cont ++;
+                
                 total = total + (p.getPrice()*qntProd[cont]);
+                cont ++;
             }
+            session.setAttribute("totalCart", total);
             %>
             <tr>
                 <td></td><td></td><td>Total</td><td class="item_price"><%= total %></td>
