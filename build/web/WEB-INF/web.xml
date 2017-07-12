@@ -30,7 +30,11 @@
     </servlet>
     <servlet>
         <servlet-name>deleteItemController</servlet-name>
-        <servlet-class>controller.deleteItemController</servlet-class>
+        <servlet-class>controller.deleteItemCartController</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>addOrderController</servlet-name>
+        <servlet-class>controller.addOrderController</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>loginController</servlet-name>
@@ -63,6 +67,10 @@
     <servlet-mapping>
         <servlet-name>deleteItemController</servlet-name>
         <url-pattern>/deleteItem</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>addOrderController</servlet-name>
+        <url-pattern>/addOrder</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

@@ -24,6 +24,13 @@ public class loginController extends HttpServlet {
          
         String email = request.getParameter("email");
         String password = request.getParameter("password");
+        int order;
+        
+        if (request.getParameter("addOrder") != null && request.getParameter("addOrder") != "" ){
+            order = Integer.parseInt(request.getParameter("addOrder"));
+        } else {
+            order =0 ;
+        }
         
         UsuarioDAO dao = new UsuarioDAO();
         Usuario user = dao.getUserByEmail(email);
@@ -32,7 +39,12 @@ public class loginController extends HttpServlet {
             HttpSession session = request.getSession(true);
             session.setAttribute("nome", user.getName());
             session.setAttribute("id", user.getId());
-            response.sendRedirect("index.jsp");  
+            
+            if (order == 1){
+                response.sendRedirect("addOrder");
+            } else {
+                response.sendRedirect("index.jsp");
+            }
         } else {
             response.sendRedirect("404.jsp");
         }

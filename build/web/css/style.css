@@ -19,6 +19,19 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 	font-family:'Oxygen-Regular';
 	src:url(../fonts/Oxygen-Regular.ttf) format('truetype');
 }
+::-webkit-scrollbar-track {
+  background-color: #F5F5F5;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+  background-color: #F5F5F5;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #F67777;
+}
+
 html,body{
 	background:#fff;
 	font-size: 100%;
@@ -38,6 +51,14 @@ body a{
 }
 h1,h2,h3,h4,h5,h6,label,p{
 	margin:0;	
+}
+
+#sair {
+    color : #F67777;
+    font-weight: bold;
+}
+#sair:hover {
+    color : #FFF;
 }
 /*--header--*/
 .head{
@@ -1298,6 +1319,11 @@ a.at-in {
     float: right;
 	width: 74%;
 }
+
+#no-sed {
+    float: left;
+    width: 100%;
+}
 .sed h5{
   	font-size: 1.1em;
 	font-family: 'Ubuntu-Regular';
@@ -1308,6 +1334,19 @@ a.at-in {
 }
 .sed h5 a:hover{
     color: #000;
+    cursor: pointer;
+}
+
+a:hover{
+    cursor:pointer !important;
+}
+
+.order-details:hover {
+    background-color:#F7F7F7;
+}
+
+.table-item th {
+    font-size: 1em;
 }
 .sed p{
     color:#b2b2b2;

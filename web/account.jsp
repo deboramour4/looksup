@@ -1,7 +1,13 @@
+<%@page import="model.ProdutoDAO"%>
+<%@page import="model.Produto"%>
+<%@page import="model.Item"%>
+<%@page import="model.PedidoDAO"%>
+<%@page import="model.Pedido"%>
 <%@page import="java.util.ArrayList"%>
 <%@page import="java.util.List"%>
 <%@page import="model.Address"%>
 <%@page import="model.Usuario"%>
+
 <jsp:useBean id="acControl" class="controller.accountController" scope="session"/>
     
 <!--A Design by W3layouts 
@@ -76,7 +82,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 </div>
 <div class="single">
     <div class="container">
-        <div class="col-md-9">
+        <div class="col-md-10">
         <!-- client area -->
             <div class="tab-head">
                 <h3>Olá, <%= session.getAttribute("nome") %>!</h3>
@@ -93,7 +99,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                     <ul class="nav tabs">
                         <li class="active"><a href="#tab1" data-toggle="tab">Meu perfil</a></li>
                         <li class=""><a href="#tab2" data-toggle="tab">Meus pedidos</a></li> 
-                        <li class=""><a href="logout">Sair</a></li>  
+                        <li ><a href="logout" id="sair">Sair</a></li>  
                     </ul>
                 </nav>
                 <div class="tab-content one">
@@ -194,25 +200,92 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                     </div>
                     
                     <div class="tab-pane text-style" id="tab2">
-                        <div class="facts">									
-                            <p> Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections </p>
-                            <ul>
-                                <li><span class="glyphicon glyphicon-ok" aria-hidden="true"></span>Multimedia Systems</li>
-                                <li><span class="glyphicon glyphicon-ok" aria-hidden="true"></span>Digital media adapters</li>
-                                <li><span class="glyphicon glyphicon-ok" aria-hidden="true"></span>Set top boxes for HDTV and IPTV Player  </li>
-                            </ul>
-                        </div>	
-                    </div>
-                </div>
-                <div class="clearfix"></div>
-            </div>                      
+                        
+                        <div class="table-responsive">
+                            <table class="table-heading simpleCart_shelfItem">
+                                <tr>
+                                  <th class="table-grid">Pedido</th>		
+                                  <th>Data</th>
+                                  <th >Valor</th>
+                                  <th >Situação</th>
+
+                                </tr>	
+                                <%
+                                    List<Pedido> pedidos = new ArrayList<Pedido>();
+
+                                    PedidoDAO daoPed = new PedidoDAO();
+
+                                    pedidos = daoPed.getOrdersByUser((Integer)session.getAttribute("id"));
+
+                                    for (Pedido p : pedidos) {
+                                %>
+                                <!-- pedido -->
+                                <tr class="cart-header mid-pop order-details">
+                                    <td >
+                                        <div class="sed" id="no-sed">
+                                            <h5><a> Pedido Nº 00<%= p.getId() %></a></h5>
+                                        </div>
+                                        <div class="clearfix"> </div>
+                                    </td>
+                                    <td> <%= p.getDate() %></td>
+                                    <td> R$ <%= p.getValue() %></td>
+                                    <td>Aguardando Pagamento</td>                                                            
+                                </tr>
+                                <tr class="item-details">
+                                    <td colspan="4">
+                                        <table class="table-heading simpleCart_shelfItem table-item">
+                                              <tr>
+                                                <th class="table-grid">Produto</th>		
+                                                <th>Quant.</th>
+                                                <th >Preço</th>
+                                                <th >Subtotal</th>
+
+                                              </tr>	                                       
+                                            <%
+                                             List<Item> itens = new ArrayList<Item>();
+                                             Produto prod = new Produto();
+                                             ProdutoDAO daoProd = new ProdutoDAO();
+
+                                             itens = daoPed.getItensOrderById(p.getId());
+
+                                             for (Item i : itens) {
+                                              prod = daoProd.getProductById(i.getId_product());
+                                           %>
+                                            <tr>
+                                                <td class="ring-in">
+                                                    <a href="single.html" class="at-in"><img src=<%= prod.getImage() %> class="img-responsive" alt=""></a>
+                                                    <div class="sed">
+                                                            <h5><a href="single.html"><%= prod.getName() %></a></h5>
+                                                    </div>
+                                                    <div class="clearfix"> </div>
+                                                </td>
+                                                <td><%= i.getQuantity() %></td>
+                                                <td><%= prod.getPrice() %></td>
+                                                <td><%= prod.getPrice()*i.getQuantity() %></td>
+                                            </tr>
+                                        <% } %> 
+                                        </table>
+                                    </td>
+                                    
+                                </tr>
+
+                                <!-- pedido -->
+                                <% } %>
+                            </table> <!-- table -->
+                        </div> <!-- table responsive -->
+                    </div> <!-- tab2 -->
+                </div>	<!-- tab content one  -->
+            </div> <!-- tab head -->
+        </div> <!-- md-10 -->
+                                                    <div class="clearfix"></div>
+    </div>  <!-- container -->                    
         <!-- client area -->
-        </div>
+</div> <!--  single -->
     <!----->
         <div class="clearfix"> </div>
-    </div>
 
-</div>
+
+
 
 		
 	<!--//content-->
@@ -245,7 +318,21 @@ $(window).load(function() {
         $('#see-pass').removeClass('glyphicon-eye-close').addClass('glyphicon-eye-open');
         }
     );
+    
 });
+
+$(document).ready(function(){
+
+        $('.item-details').hide(500);
+        $('.order-details').click(function(){
+                if($(this).next().is(":visible")){
+                        $(this).next().hide();
+                }else{               
+                $(this).next().toggle("down");
+        }
+        }) //subtitle click
+      
+}) //ready function
 </script>
 
 	<script src="js/simpleCart.min.js"> </script>

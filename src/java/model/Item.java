@@ -9,7 +9,6 @@ public class Item {
     private int id_product;
     private int id_order;
     private int quantity;
-    private char size;
 
     public int getId() {
         return id;
@@ -41,14 +40,6 @@ public class Item {
 
     public void setQuantity(int quantity) {
         this.quantity = quantity;
-    }
-
-    public char getSize() {
-        return size;
-    }
-
-    public void setSize(char size) {
-        this.size = size;
     }
 
 }

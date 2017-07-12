@@ -1,41 +1,28 @@
-
+FEITO
 • (OK) Os produtos em estoque podem ser visualizados por todos os usuários;
-• (OK)Qualquer usuário (que tenha efetuado o login ou não) pode navegar pelo site e colocar,
-em seu carrinho de compra, os produtos que ele deseja comprar;
-• (OK)Deve ser informada a quantidade para cada produto adicionado no carrinho de compras; -ajeitar na pagina single, e no proprio cart
+• (OK) Qualquer usuário (que tenha efetuado o login ou não) pode navegar pelo site e colocar, em seu carrinho de compra, os produtos que ele deseja comprar;
+• (OK) O usuário pode ter a opção de remover itens do carrinho de compra;
+• (OK) O usuário só poderá efetuar a compra se estiver cadastrado e com uma sessão válida no sistema;
+• (OK) O sistema deve ter um área para cadastro de novos usuários
+– (OK)Cadastro de usuários
+– (OK) Login e (OK) Logout da sessão de usuário
+– (OK) Carrinho de compras (deve ser implementado com cookies)
+– (OK) Atenção para as boas prática de uso
+– (OK) Utilizar Servlets para a camada de controle do MVC
+– (OK) Utilizar JSPs para a camada de visão do MVC
+– (OK) A solução deve contemplar o uso de JavaBeans para transportar dados entre as camadas do MVC
+– (OK) Deve ter sessão de usuário, cookies e acesso a banco de dados relacional por meio do JDBC
+– (OK) Usuário com login válido poderá visualizar todas as suas compras
 
+INCOMPLETO
+• (OK) Deve ser informada a quantidade para cada produto adicionado no carrinho de compras; -ajeitar no proprio cart
+– (OK) Realizar uma compra, caso existam produtos e quantidades disponíveis em estoque; - checar a quantidade de produtos no estoque e diminuir corretamente
+- LOGIN ADD ORDER = 1
+- AJEITAR O TOTAL DO CARRINHO
+- telas: de cadastro com sucesso, de erro de senha, de compra realizada com sucesso
+-tempo de sessão de usuario
 
-
-• O usuário pode ter a opção de remover itens do carrinho de compra;
-• O usuário só poderá efetuar a compra se estiver cadastrado e com uma sessão válida no sistema;
-• O sistema deve ter um área para cadastro de novos usuários e também a possibilidade do
-usuário alterar e excluir seus dados pessoais;
-
-
-• PRINCIPAIS RECURSOS:
-– (OK)Cadastro de usuários, alteração dos dados de usuário e exclusão do usuário
-– (OK)Login e (OK)Logout da sessão de usuário
-– (OK)Carrinho de compras (deve ser implementado com cookies)
-
-
-– Realizar uma compra, caso existam produtos e quantidades disponíveis em
-estoque
-– Usuário com login válido poderá visualizar todas as suas compras e/ou realizar
-novas compras
-
-
-
-• OBSERVAÇÕES:
-– (OK)  Atenção para as boas prática de uso
-– (OK)Utilizar Servlets para a camada de controle do MVC
-– (OK)Utilizar JSPs para a camada de visão do MVC
-
-
+FALTA
+• Usuario deve ter a possibilidade do usuário alterar e excluir seus dados pessoais;
 – Deve haver pelo menos uma taglib
 – Deve haver uma aplicabilidade de filtros
-
-
-– (OK)A solução deve contemplar o uso de JavaBeans para transportar
-dados entre as camadas do MVC
-– (OK)Deve ter sessão de usuário, cookies e acesso a banco de dados
-relacional por meio do JDBC

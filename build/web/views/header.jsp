@@ -192,8 +192,13 @@
         <div class="cart box_1">
                 <a href="cart">
                 <h3> <div class="total">
-                    <span class="simpleCart_total"><%= session.getAttribute("totalCart")%></span></div>
+                    <% if (session.getAttribute("totalCart") == null) {%>
+                    <span class="simpleCart_total">  R$ 0,0 </span></div>
+                    <% } else { %>
+                    <span class="simpleCart_total"> R$ <%= session.getAttribute("totalCart")%></span></div>
+                    <% } %>
                     <img src="images/cart.png" alt=""/></h3>
+                    
                 </a>
                 <!-- provavelente esvazia o carrinho
                 <p><a href="javascript:;" class="simpleCart_empty">Empty Cart</a></p> -->

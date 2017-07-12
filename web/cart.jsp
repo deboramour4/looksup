@@ -76,6 +76,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                 int qntProd[] = (int[])session.getAttribute("qntProd"); //quantidades
                 
                 if (cookiesProd == null){
+                    session.setAttribute("totalCart", "0,0");
             %>	
             <h3>Não há nada no carrinho.</h3>
             <%
@@ -134,7 +135,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
     </div>
 </div>
 	<div class="produced">
-            <a href="single.html" class="hvr-skew-backward">Comprar</a>
+            <a href="addOrder" class="hvr-skew-backward">Comprar</a>
 	</div>
         <%
             }

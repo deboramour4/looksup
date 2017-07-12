@@ -2,6 +2,7 @@ package model;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
@@ -22,5 +23,31 @@ public class ItemDAO {
         return resultado;
     }
     
+    public boolean addItem(int id_product, int id_order ,int quantity) {
+        try {
+            Class.forName("org.postgresql.Driver");
+            Connection c = DriverManager.getConnection("jdbc:postgresql://localhost:5432/looksup", "postgres", "debora123");
+            //Connection c = DriverManager.getConnection("jdbc:postgresql://localhost:5432/looksup", "postgres", "ufc123");
+            
+            String query = "INSERT INTO item (id_product, id_order , quantity) VALUES (?, ?, ?)";
+            PreparedStatement pstmt = c.prepareStatement(query);
+
+            pstmt.setInt(1, id_product);
+            pstmt.setInt(2, id_order);
+            pstmt.setInt(3, quantity);
+            pstmt.executeUpdate();
+            
+            pstmt.close();
+            c.close();
+            
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(UsuarioDAO.class.getName()).log(Level.SEVERE, null, ex);
+            return false;
+        } catch (SQLException ex) {
+            Logger.getLogger(UsuarioDAO.class.getName()).log(Level.SEVERE, null, ex);
+            return false;
+        }
+        return true;
+    }
 
 }
