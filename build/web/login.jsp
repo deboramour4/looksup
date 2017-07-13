@@ -7,7 +7,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <!DOCTYPE html>
 <html>
 <head>
-<title>Shopin A Ecommerce Category Flat Bootstrap Responsive Website Template | Login :: w3layouts</title>
+<title>Login | Looks Up : Store</title>
 <link href="css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
 <!-- Custom Theme files -->
 <!--theme-style-->
@@ -57,7 +57,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	<div class="container">
 		<h1>Login</h1>
 		<em></em>
-		<h2><a href="index.html">Home</a><label>/</label>Login</h2>
+		<h2><a href="index.jsp">Home</a><label>/</label>Login</h2>
 	</div>
 </div>
 <!--login-->
@@ -65,6 +65,17 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
     <div class="login">		
         <form method="POST" action="login">
             <div class="col-md-6 login-do">
+                
+                
+                <%
+                    if ( request.getParameter("error") != null ) {
+                %>
+                <div class="alert alert-danger" role="alert">
+                    <strong>Usuário ou senha inválidos!</strong> Tente de novo.
+                </div>
+                <%  } %>
+                
+                
                 <div class="login-mail">
                     <input type="text" placeholder="Email" name="email" required>
                     <i  class="glyphicon glyphicon-envelope"></i>
@@ -72,20 +83,19 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                 <div class="login-mail">
                     <input id="pass" type="password" placeholder="Senha" name="password" required>
                     <i id="see-pass" class="glyphicon glyphicon-eye-open"></i>
-                </div>
-                    <a class="news-letter " href="#">
-                        <label class="checkbox1"><input type="checkbox" name="checkbox" ><i> </i>Lembrar senha</label>
-                    </a>
+                </div>               
+                <a class="news-letter " href="#">
+                    <label class="checkbox1"><input type="checkbox" name="checkbox" ><i> </i>Lembrar senha</label>
+                </a>
                 <label class="hvr-skew-backward">
                     <input type="submit" value="Entrar">
                 </label>
             </div>
             <div class="col-md-6 login-right">
-                <h3>Completely Free Account</h3>
+                <h3>Cadastro completamente grátis</h3>
 
-                <p>Pellentesque neque leo, dictum sit amet accumsan non, dignissim ac mauris. Mauris rhoncus, lectus tincidunt tempus aliquam, odio 
-                libero tincidunt metus, sed euismod elit enim ut mi. Nulla porttitor et dolor sed condimentum. Praesent porttitor lorem dui, in pulvinar enim rhoncus vitae. Curabitur tincidunt, turpis ac lobortis hendrerit, ex elit vestibulum est, at faucibus erat ligula non neque.</p>
-                <a href="register.html" class=" hvr-skew-backward">Cadastre-se</a>
+                <p>A Looks Up Store é um empresa que atende o público feminino de uma forma simples e fácil. Aqui você encontra os looks mais atuais para ficar na moda em todas as estações. Confira os nossos preços e descontos!<br> <b> Não possui uma conta? Cadastre-se.</b></p>
+                <a href="register.jsp" class=" hvr-skew-backward">Cadastre-se</a>
             </div>
             <div class="clearfix"> </div>
         </form>

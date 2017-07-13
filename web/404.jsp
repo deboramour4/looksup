@@ -7,7 +7,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <!DOCTYPE html>
 <html>
 <head>
-<title>Shopin A Ecommerce Category Flat Bootstrap Responsive Website Template | 404 :: w3layouts</title>
+<title>404 | Looks Up : Store</title>
 <link href="css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
 <!-- Custom Theme files -->
 <!--theme-style-->
@@ -64,8 +64,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	<div class="container">
 		<div class="four">
 		<h3>404</h3>
-		<p>Sorry! Evidently the document you were looking for has either been moved or no longer exist.</p>
-		<a href="index.html" class="hvr-skew-backward">Back To Home</a>
+		<p>Desculpe! A página procurada ainda não existe.</p>
+		<a href="index.jsp" class="hvr-skew-backward">Voltar para Home</a>
 		</div>
 	</div>
 <!--//login-->

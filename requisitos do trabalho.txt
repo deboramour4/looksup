@@ -13,16 +13,35 @@ FEITO
 – (OK) A solução deve contemplar o uso de JavaBeans para transportar dados entre as camadas do MVC
 – (OK) Deve ter sessão de usuário, cookies e acesso a banco de dados relacional por meio do JDBC
 – (OK) Usuário com login válido poderá visualizar todas as suas compras
+– (OK) Realizar uma compra, caso existam produtos e quantidades disponíveis em estoque; (OK) checar a quantidade de produtos no estoque e diminuir corretamente
+• (OK) Usuario deve ter a possibilidade do usuário alterar e excluir seus dados pessoais;
+- (OK) telas: de cadastro com sucesso, (OK) de erro de senha, (OK) de compra realizada com sucesso
+
 
 INCOMPLETO
 • (OK) Deve ser informada a quantidade para cada produto adicionado no carrinho de compras; -ajeitar no proprio cart
-– (OK) Realizar uma compra, caso existam produtos e quantidades disponíveis em estoque; - checar a quantidade de produtos no estoque e diminuir corretamente
-- LOGIN ADD ORDER = 1
-- AJEITAR O TOTAL DO CARRINHO
-- telas: de cadastro com sucesso, de erro de senha, de compra realizada com sucesso
--tempo de sessão de usuario
 
 FALTA
-• Usuario deve ter a possibilidade do usuário alterar e excluir seus dados pessoais;
 – Deve haver pelo menos uma taglib
 – Deve haver uma aplicabilidade de filtros
+
+
+
+
+Pode ser um único documento no formato do Word. Esse documento deve possui, basicamente, duas informações:
+
+1) O que é necessário configurar em um computador para poder executar o código-fonte?
+-- Por exemplo: qual a classe que eu preciso colocar o usuário e a senha do banco de dados para a aplicação funcionar?
+
+2) Como utilizar a aplicação, colocar por exemplo, os prints da ferramenta e dizer o que cada tela faz. É algo bem simples e direto.
+Por exemplo: tela de login
+Na tela de login, precisa informar o usuário, senha e clicar no botão enviar. Além disso, na tela existe um hiperlink que leva o usuário a um cadastro ...
+__
+
+Seria as credenciais do usuário do banco de dados.
+Se você está utilizando JDBC para se conectar com o banco de dados, você precisa fornecer as credenciais de acesso ao banco de dados.
+A linha de código que faz isso, é algo semelhante a isso:
+Connection connection = DriverManager.getConnection("jdbc:postgresql://localhost:5432/bancodedados", "postgres", "ufc123");
+As strings do método getConnection podem mudar dependendo de como o postgresql foi instalado. Da mesma forma, o usuário e a senha pode mudar de uma máquina para outra.
+Em resumo, seria informar as classes ou arquivos onde se precisa alterar para poder fazer o aplicativo rodar em outra máquina.
+

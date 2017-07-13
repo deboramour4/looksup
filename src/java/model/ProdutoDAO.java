@@ -21,9 +21,8 @@ public class ProdutoDAO {
         List<Produto> resultado = new ArrayList<Produto>();
                         
         try {
-            Class.forName("org.postgresql.Driver");
-            Connection c = DriverManager.getConnection("jdbc:postgresql://localhost:5432/looksup", "postgres", "debora123");
-            //Connection c = DriverManager.getConnection("jdbc:postgresql://localhost:5432/looksup", "postgres", "ufc123");
+            Class.forName(DbStuff.driver);
+            Connection c = DriverManager.getConnection(DbStuff.urlCon, DbStuff.user, DbStuff.password );
             
             Statement s = c.createStatement();
             ResultSet r = s.executeQuery("SELECT * FROM product");
@@ -58,9 +57,8 @@ public class ProdutoDAO {
         Produto p = new Produto();
         
         try {
-            Class.forName("org.postgresql.Driver");
-            Connection c = DriverManager.getConnection("jdbc:postgresql://localhost:5432/looksup", "postgres", "debora123");
-            //Connection c = DriverManager.getConnection("jdbc:postgresql://localhost:5432/looksup", "postgres", "ufc123");
+            Class.forName(DbStuff.driver);
+            Connection c = DriverManager.getConnection(DbStuff.urlCon, DbStuff.user, DbStuff.password );
             
             String query = "SELECT * FROM product WHERE id = ?";
             PreparedStatement pstmt = c.prepareStatement(query);
@@ -90,6 +88,30 @@ public class ProdutoDAO {
         return p;
     }
     
-    
+    public boolean setProductQuantity(int id, int quantity){
+       
+        try {
+            Class.forName(DbStuff.driver);
+            Connection c = DriverManager.getConnection(DbStuff.urlCon, DbStuff.user, DbStuff.password );
+            
+            String query = "UPDATE product SET quantity = ? WHERE id = ?";
+            PreparedStatement pstmt = c.prepareStatement(query);
+            
+            pstmt.setInt(1, quantity);
+            pstmt.setInt(2, id);
+            pstmt.executeUpdate();
+            
+            pstmt.close();
+            c.close();
+            
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(UsuarioDAO.class.getName()).log(Level.SEVERE, null, ex);
+            return false;
+        } catch (SQLException ex) {
+            Logger.getLogger(UsuarioDAO.class.getName()).log(Level.SEVERE, null, ex);
+            return false;
+        }   
+        return true;
+    }
        
 }

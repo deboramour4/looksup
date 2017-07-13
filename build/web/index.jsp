@@ -64,22 +64,23 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <div class="container">
 <section class="rw-wrapper">
 				<h1 class="rw-sentence">
-					<span>Fashion &amp; Beauty</span>
+					<span>Moda &amp; Beleza</span>
 					<div class="rw-words rw-words-1">
-						<span>Beautiful Designs</span>
-						<span>Sed ut perspiciatis</span>
-						<span> Totam rem aperiam</span>
-						<span>Nemo enim ipsam</span>
-						<span>Temporibus autem</span>
-						<span>intelligent systems</span>
+						<span>Reflita sua beleza interior</span>
+						<span>Estar na moda é uma escolha</span>
+						<span>O importante é se sentir bem consigo mesma</span>
+                                                <span>Reflita sua beleza interior</span>
+						<span>Estar na moda é uma escolha</span>
+						<span>O importante é se sentir bem consigo mesma</span>
 					</div>
 					<div class="rw-words rw-words-2">
-						<span>We denounce with right</span>
-						<span>But in certain circum</span>
-						<span>Sed ut perspiciatis unde</span>
-						<span>There are many variation</span>
-						<span>The generated Lorem Ipsum</span>
-						<span>Excepteur sint occaecat</span>
+						<span></span>
+						<span>Encontre as tendências aqui</span>
+						<span>Beleza naquele que veste</span>
+						<span>Economize nas suas compras</span>
+                                                <span>Encontre as tendências aqui</span>
+						<span>Beleza naquele que veste</span>
+						<span>Economize nas suas compras</span>
 					</div>
 				</h1>
 			</section>
@@ -92,40 +93,40 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					<div class="col-md-6 col-md">
 						<div class="col-1">
 						 <a href="single.jsp" class="b-link-stroke b-animate-go  thickbox">
-		   <img src="images/pi.jpg" class="img-responsive" alt=""/><div class="b-wrapper1 long-img"><p class="b-animate b-from-right    b-delay03 ">Lorem ipsum</p><label class="b-animate b-from-right    b-delay03 "></label><h3 class="b-animate b-from-left    b-delay03 ">Trendy</h3></div></a>
+		   <img src="images/pi.jpg" class="img-responsive" alt=""/><div class="b-wrapper1 long-img"><p class="b-animate b-from-right    b-delay03 ">Coleção</p><label class="b-animate b-from-right    b-delay03 "></label><h3 class="b-animate b-from-left    b-delay03 ">de inverno</h3></div></a>
 
 							<!---<a href="single.jsp"><img src="images/pi.jpg" class="img-responsive" alt=""></a>-->
 						</div>
 						<div class="col-2">
-							<span>Hot Deal</span>
-							<h2><a href="single.jsp">Luxurious &amp; Trendy</a></h2>
-							<p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years</p>
-							<a href="single.jsp" class="buy-now">Buy Now</a>
+							<span>ÚLTIMAS TENDÊNCIAS</span>
+							<h2><a href="single.jsp">Casual &amp; Elegante</a></h2>
+							<p>O metalizado já tinha ganhado nosso coração nos sapatos, quando começaram a surgir as sapatilhas e mocassins dourados e prateados. Agora essa historia vai também pras peças de roupa, então vale usar tshirts, jaquetas bomber, saias midi e tudo o que você quiser nesse acabamento brilhante do metal. Para não ter erro, basta combinar com peças mais neutras.</p>
+							<a href="product.jsp" class="buy-now">Ver produtos</a>
 						</div>
 					</div>
 					<div class="col-md-6 col-md1">
 						<div class="col-3">
 							<a href="single.jsp"><img src="images/pi1.jpg" class="img-responsive" alt="">
 							<div class="col-pic">
-								<p>Lorem Ipsum</p>
+								<p>Coleções</p>
 								<label></label>
-								<h5>For Men</h5>
+								<h5>Masculinas</h5>
 							</div></a>
 						</div>
 						<div class="col-3">
 							<a href="single.jsp"><img src="images/pi2.jpg" class="img-responsive" alt="">
 							<div class="col-pic">
-								<p>Lorem Ipsum</p>
+								<p>Coleções</p>
 								<label></label>
-								<h5>For Kids</h5>
+								<h5>Infantis</h5>
 							</div></a>
 						</div>
 						<div class="col-3">
 							<a href="single.jsp"><img src="images/pi3.jpg" class="img-responsive" alt="">
 							<div class="col-pic">
-								<p>Lorem Ipsum</p>
+								<p>Coleções</p>
 								<label></label>
-								<h5>For Women</h5>
+								<h5>Femininas</h5>
 							</div></a>
 						</div>
 					</div>
@@ -142,7 +143,6 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                                             
                                     Produto p;
                                     
-                                    for (int j = 0; j<2 ; j++ ){
                                     for(int i = 0; i < allProducts.size() ; i++){
                                         p = allProducts.get(i);
 
@@ -168,11 +168,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                                                         </div>
                                                         <div class="img item_add">
                                                                 <a href="addCart?id=<%= p.getId() %>&qnt=1"><img src="images/ca.png" alt=""></a>
-                                                                
-                                                                
-                                                                <!--
-                                                                <form action="addCart"><input type="submit" name="id" value="<%= p.getId() %>" ><img src="images/ca.png" alt=""></form>
-                                                                -->
+                    
                                                         </div>
                                                         <div class="clearfix"></div>
                                                         </div>
@@ -192,7 +188,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                                    <div class="clearfix"></div>
                                 </div>    
                                 <%      } 
-                                    } }
+                                    } 
                                 %>
 			</div>
 			<!--//products-->

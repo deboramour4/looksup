@@ -8,7 +8,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <!DOCTYPE html>
 <html>
 <head>
-<title>Shopin A Ecommerce Category Flat Bootstrap Responsive Website Template | Register :: w3layouts</title>
+<title>Cadastro | Looks Up : Store</title>
 <link href="css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
 <!-- Custom Theme files -->
 <!--theme-style-->
@@ -98,18 +98,33 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                             </div>
                             
                             <div class="col-md-6 login-right">
-                                <h3>Completely Free Account</h3>
-                                <p>Pellentesque neque leo, dictum sit amet accumsan non, dignissim ac mauris. Mauris rhoncus, lectus tincidunt tempus aliquam, odio 
-                                libero tincidunt metus, sed euismod elit enim ut mi. Nulla porttitor et dolor sed condimentum. Praesent porttitor lorem dui, in pulvinar enim rhoncus vitae. Curabitur tincidunt, turpis ac lobortis hendrerit, ex elit vestibulum est, at faucibus erat ligula non neque.</p>
+                                <h3>Cadastro completamente grátis</h3>
+                                <p>A Looks Up Store é um empresa que atende o público feminino de uma forma simples e fácil. Aqui você encontra os looks mais atuais para ficar na moda em todas as estações. Confira os nossos preços e descontos!<br> <b> Já possui uma conta? Faça login.</b></p>
                                 <a href="login.jsp" class="hvr-skew-backward">Login</a>
                             </div>
 
                             <div class="clearfix"> </div>
 			</form>
 		</div>
+<%
+    } else { 
+%>
+        <div class="page-header">
+            <h3>Cadastro realizado com sucesso!</h3>
+        </div>
+        <div class="col-md-6  login-right">
+            <p>Se você quiser terminar de configurar a sua conta e o seu endereço de entrega, vá para <b>Minha Conta</b></p>
+            <a href="account.jsp" class="hvr-skew-backward">Minha Conta</a>
+        </div>
+        <div class="col-md-6 login-right">
+            <p>Se você deseja voltar para a loja e continuar suas compras, vá para <b>Looks Up : Store</b></p>
+            <a href="account.jsp" class="hvr-skew-backward">Continuar minhas compras</a>
+        </div>    
 
+<%
+    }
+%>
 </div>
-
 <!--//login-->
 
 		<!--brand-->
@@ -129,27 +144,11 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				</div>
 				<div class="clearfix"></div>
 			</div>
-			</div>
+                </div>
 			<!--//brand-->
 	
 	<!--//content-->
-                <%
-                    } else { 
-                %>
-                <div class="container">
-			<div class="col-md-6 login-do">
-                            <h3>Cadastro realizado com sucesso!</h3>
-                            <p>Se você quiser terminar de configurar a sua conta e o seu endereço de entrega, vá para <b>Minha Conta</b></p>
-                            <a href="account.jsp" class="hvr-skew-backward">Minha Conta</a>
-                        </div>
-                        <div class="col-md-6 login-right">
-                            <p>Se você deseja voltar para a loja e continuar suas compras, vá para <b>Looks Up : Store</b></p>
-                            <a href="account.jsp" class="hvr-skew-backward">Continuar minhas compras</a>
-                        </div>    
-                </div>
-                <%
-                    }
-                %>
+                
 <!--//footer-->
 <%@ include file= "views/footer.jsp" %>
 <!--//footer-->

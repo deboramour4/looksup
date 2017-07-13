@@ -4,10 +4,13 @@ Author URL: http://w3layouts.com
 License: Creative Commons Attribution 3.0 Unported
 License URL: http://creativecommons.org/licenses/by/3.0/
 -->
+
+<%@ taglib uri ="/WEB-INF/tld/tags.tld" prefix ="tg"%>
+
 <!DOCTYPE html>
 <html>
 <head>
-<title>Shopin A Ecommerce Category Flat Bootstrap Responsive Website Template | Contact :: w3layouts</title>
+<title>Contato | LooksUp : Store</title>
 <link href="css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
 <!-- Custom Theme files -->
 <!--theme-style-->
@@ -53,91 +56,92 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <%@ include file= "views/header.jsp" %>
 
 <!--banner-->
-	<div class="banner-top">
-	<div class="container">
-		<h1>Contact</h1>
-		<em></em>
-		<h2><a href="index.html">Home</a><label>/</label>Contact</h2>
-	</div>
+<div class="banner-top">
+    <div class="container">
+        <h1>Contato</h1>
+        <em></em>
+        <h2><a href="index.jsp">Home</a><label>/</label>Contato</h2>
+    </div>
 </div>	
-		
-			<div class="contact">
-					
-				<div class="contact-form">
-					<div class="container">
-					<div class="col-md-6 contact-left">
-						<h3>At vero eos et accusamus et iusto odio dignissimos ducimus qui </h3>
-						<p>Blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas.
-						At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas.At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas. </p>
-					
-			
-					<div class="address">
-					<div class=" address-grid">
-							<i class="glyphicon glyphicon-map-marker"></i>
-							<div class="address1">
-								<h3>Address</h3>
-								<p>Lorem ipsum dolor,
-								TL 19034-88974</p>
-							</div>
-							<div class="clearfix"> </div>
-						</div>
-						<div class=" address-grid ">
-							<i class="glyphicon glyphicon-phone"></i>
-							<div class="address1">
-							<h3>Our Phone:<h3>
-								<p>+123456789</p>
-							</div>
-							<div class="clearfix"> </div>
-						</div>
-						<div class=" address-grid ">
-							<i class="glyphicon glyphicon-envelope"></i>
-							<div class="address1">
-							<h3>Email:</h3>
-								<p><a href="mailto:info@example.com"> Lorem@example.com</a></p>
-							</div>
-							<div class="clearfix"> </div>
-						</div>
-						<div class=" address-grid ">
-							<i class="glyphicon glyphicon-bell"></i>
-							<div class="address1">
-								<h3>Open Hours:</h3>
-								<p>Monday-Friday, 7AM-5PM</p>
-							</div>
-							<div class="clearfix"> </div>
-						</div>
+
+<div class="contact">
+        <div class="contact-form">
+            <div class="container">
+                <div class="col-md-6 contact-left">
+                        <h3>Looks Up Store</h3>
+                        <p>A Looks Up Store está sempre disponível para atendê-lo. Contate-nos por telefone, e-mail ou nos mande uma mensagem pelo site.</p>
+
+
+                <div class="address">
+                    <div class=" address-grid">
+                        <i class="glyphicon glyphicon-map-marker"></i>
+                        <div class="address1">
+                                <h3>Endereço</h3>
+                                <p>Rua das Flores, 
+                                109, Fortaleza. CEP 60421-751</p>
+                        </div>
+                        <div class="clearfix"> </div>
+                    </div>
+                    <div class=" address-grid ">
+                        <i class="glyphicon glyphicon-phone"></i>
+                        <div class="address1">
+                        <h3>Nosso Telefone: <h3>
+                                <p> +123456789</p>
+                        </div>
+                        <div class="clearfix"> </div>
+                    </div>
+                    <div class=" address-grid ">
+                        <i class="glyphicon glyphicon-envelope"></i>
+                        <div class="address1">
+                        <h3>Email:</h3>
+                                <p><a href="mailto:deboramoura@alu.ufc.br"> deboramoura@alu.ufc.br</a></p>
+                        </div>
+                        <div class="clearfix"> </div>
+                    </div>
+                    <div class=" address-grid ">
+                        <i class="glyphicon glyphicon-bell"></i>
+                        <div class="address1">
+                                <h3>Horário de Funcionamento:</h3>
+                                <p>Segunda-Sexta, 7H-16H</p>
+                        </div>
+                        <div class="clearfix"> </div>
+                    </div>
+                </div>
+        </div>
+        <div class="col-md-6 contact-top">
+                <h3>Envie-nos uma mensagem</h3>
+                <p>Costumamos reponder em até 8 horas úteis.<br>
+                   Hora Atual: <b>  </b> </p>
+                <tg:horaAtual />
+                <form>
+                    <div>
+                        <span>Seu nome </span>		
+                        <input type="text" value="" >						
+                    </div>
+                    <div>
+                        <span>Seu email </span>		
+                        <input type="text" value="" >						
+                    </div>
+                    <div>
+                        <span>Assunto</span>		
+                        <input type="text" value="" >	
+                    </div>
+                    <div>
+                        <span>Sua mensagen</span>		
+                        <textarea> </textarea>	
+                    </div>
+                    <label class="hvr-skew-backward">
+                        <input type="submit" value="Enviar" >
+                    </label>
+                </form>						
+        </div>
+    <div class="clearfix"></div>
+    </div>
+    </div>
+    <div class="map">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d37494223.23909492!2d103!3d55!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x453c569a896724fb%3A0x1409fdf86611f613!2sRussia!5e0!3m2!1sen!2sin!4v1415776049771"></iframe>
+    </div>
 </div>
-				</div>
-				<div class="col-md-6 contact-top">
-					<h3>Want to work with me?</h3>
-					<form>
-						<div>
-							<span>Your Name </span>		
-							<input type="text" value="" >						
-						</div>
-						<div>
-							<span>Your Email </span>		
-							<input type="text" value="" >						
-						</div>
-						<div>
-							<span>Subject</span>		
-							<input type="text" value="" >	
-						</div>
-						<div>
-							<span>Your Message</span>		
-							<textarea> </textarea>	
-						</div>
-						<label class="hvr-skew-backward">
-								<input type="submit" value="Send" >
-						</label>
-</form>						
-				</div>
-		<div class="clearfix"></div>
-		</div>
-		</div>
-		<div class="map">
-						<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d37494223.23909492!2d103!3d55!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x453c569a896724fb%3A0x1409fdf86611f613!2sRussia!5e0!3m2!1sen!2sin!4v1415776049771"></iframe>
-					</div>
-	</div>
 
 <!--//contact-->
 <!--brand-->

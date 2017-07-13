@@ -3,7 +3,7 @@
         <div class="container">
             <div class="col-md-3 footer-middle-in">
                 <a href="index.jsp"><img src="images/log.png" alt=""></a>
-                <p>Suspendisse sed accumsan risus. Curabitur rhoncus, elit vel tincidunt elementum, nunc urna tristique nisi, in interdum libero magna tristique ante. adipiscing varius. Vestibulum dolor lorem.</p>
+                <p>A Looks Up Store é um empresa que atende o público feminino de uma forma simples e fácil. Aqui você encontra os looks mais atuais para ficar na moda em todas as estações.</p>
             </div>
 
             <div class="col-md-3 footer-middle-in">
@@ -23,13 +23,13 @@
             <div class="col-md-3 footer-middle-in">
                 <h6>Tags</h6>
                 <ul class="tag-in">
-                    <li><a href="#">Lorem</a></li>
-                    <li><a href="#">Sed</a></li>
-                    <li><a href="#">Ipsum</a></li>
-                    <li><a href="#">Contrary</a></li>
-                    <li><a href="#">Chunk</a></li>
-                    <li><a href="#">Amet</a></li>
-                    <li><a href="#">Omnis</a></li>
+                    <li><a href="#">Blusas</a></li>
+                    <li><a href="#">Saias</a></li>
+                    <li><a href="#">Calças</a></li>
+                    <li><a href="#">Sapatos</a></li>
+                    <li><a href="#">Jeans</a></li>
+                    <li><a href="#">Bolsas</a></li>
+                    <li><a href="#">Relógios</a></li>
                 </ul>
             </div>
             <div class="col-md-3 footer-middle-in">

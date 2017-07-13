@@ -1,5 +1,4 @@
-INSERT into product (name,price,description,image,category,subcategory,quantity)
-VALUES('Moonlight CT H', 70.00 , 'Blusa social verde bebê Moonlight CT H. Confeccionada em tecido plano 100% Rayon. Medidas: Ombro: 10cm/ Manga: 62cm/ Busto: 98cm/ Comprimento: 64cm/ Tamanho: P.','images/pc.jpg', 'Roupas', 'Blusas', 12);
+INSERT into product (name,price,description,image,category,subcategory,quantity) VALUES('Moonlight CT H', 70.00 , 'Blusa social verde bebê Moonlight CT H. Confeccionada em tecido plano 100% Rayon. Medidas: Ombro: 10cm/ Manga: 62cm/ Busto: 98cm/ Comprimento: 64cm/ Tamanho: P.','images/pc.jpg', 'Roupas', 'Blusas', 12);
 
 INSERT into product (name,price,description,image,category,subcategory,quantity) VALUES('Lifestyle AT', 35.00 , 'Blusa casual rosa bebê Lifestyle AT. Confeccionada em tecido plano 100% Algodão. Medidas: Ombro: 10cm/ Manga: 15cm/ Busto: 98cm/ Comprimento: 75cm/ Tamanho: M.','images/pc1.jpg', 'Roupas', 'Blusas', 10);
 

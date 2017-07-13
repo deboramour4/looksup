@@ -60,7 +60,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	<div class="container">
 		<h1>Produto</h1>
 		<em></em>
-		<h2><a href="index.html">Home</a><label>/</label>Produto</h2>
+		<h2><a href="index.jsp">Home</a><label>/</label>Produto</h2>
 	</div>
 </div>
 
@@ -81,13 +81,13 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	<div class="col-md-5 grid">		
 		<div class="flexslider">
 			  <ul class="slides">
-			    <li data-thumb=<%= p.getImage() %>>
+			    <li data-thumb=<%= p.getImage() %> >
 			        <div class="thumb-image"> <img src="<%= p.getImage() %>" data-imagezoom="true" class="img-responsive"> </div>
 			    </li>
-			    <li data-thumb=<%= p.getImage() %>>
+			    <li data-thumb=<%= p.getImage() %> >
 			         <div class="thumb-image"> <img src="<%= p.getImage() %>" data-imagezoom="true" class="img-responsive"> </div>
 			    </li>
-			    <li data-thumb=<%= p.getImage() %>>
+			    <li data-thumb=<%= p.getImage() %> >
 			       <div class="thumb-image"> <img src="<%= p.getImage() %>" data-imagezoom="true" class="img-responsive"> </div>
 			    </li> 
 			  </ul>
@@ -100,12 +100,21 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
             
             <h4 class="quick">Descrição:</h4>
             <p class="quick_desc"><%= p.getDescription() %></p>
-                <!-- <div class="wish-list">
-                    <ul>
-                        <li class="wish"><a href="#"><span class="glyphicon glyphicon-check" aria-hidden="true"></span>Add to Wishlist</a></li>
-                    </ul>
-                </div> -->
-                
+            <%
+                if(p.getQuantity() <= 0) {
+            %>
+            <div class="wish-list">
+                <ul>
+                    <li class="wish"><a><span class="glyphicon glyphicon-minus-sign" aria-hidden="true"></span> Produto Indisponível no momento</a></li>
+                </ul>
+            </div> 
+            <% } else {%>
+            <div class="wish-list">
+                <ul>
+                    <li class="wish"><a><span class="glyphicon glyphicon-check" aria-hidden="true"></span> Disponível em estoque (<%= p.getQuantity() %> unid.)</a></li>
+                </ul>
+            </div> 
+            <% }%>
             <!-- quantidade -->    
             <div class="quantity"> 
                 <div class="quantity-select">                           

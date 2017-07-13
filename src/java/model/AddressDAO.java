@@ -19,9 +19,8 @@ public class AddressDAO {
     
     public boolean addAddress(String way, int number, String city, String state, String country, int id_user) {
         try {
-            Class.forName("org.postgresql.Driver");
-            //Connection c = DriverManager.getConnection("jdbc:postgresql://localhost:5432/looksup", "postgres", "debora123");
-            Connection c = DriverManager.getConnection("jdbc:postgresql://localhost:5432/looksup", "postgres", "ufc123");
+            Class.forName(DbStuff.driver);
+            Connection c = DriverManager.getConnection(DbStuff.urlCon, DbStuff.user, DbStuff.password );
             
             String query = "INSERT INTO address (way , number, city, state, country, id_user) VALUES (?, ?, ?, ?, ?, ?)";
             PreparedStatement pstmt = c.prepareStatement(query);
@@ -47,13 +46,42 @@ public class AddressDAO {
         return true;
     }
     
+    public boolean updateAddress(String way, int number, String city, String state, String country, int id_user) {
+        try {
+            Class.forName(DbStuff.driver);
+            Connection c = DriverManager.getConnection(DbStuff.urlCon, DbStuff.user, DbStuff.password );
+            
+            String query = "UPDATE address SET way = ?, number =? , city =?, state =?, country =? WHERE id_user = ?";
+            PreparedStatement pstmt = c.prepareStatement(query);
+
+            pstmt.setString(1, way);
+            pstmt.setInt(2, number);
+            pstmt.setString(3, city);
+            pstmt.setString(4, state);
+            pstmt.setString(5, country);
+            pstmt.setInt(6, id_user);
+            pstmt.executeUpdate();
+            
+            pstmt.close();
+            c.close();
+            
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(UsuarioDAO.class.getName()).log(Level.SEVERE, null, ex);
+            return false;
+        } catch (SQLException ex) {
+            Logger.getLogger(UsuarioDAO.class.getName()).log(Level.SEVERE, null, ex);
+            return false;
+        }
+        System.out.println("Deu tudo certo aqui também");
+        return true;
+    }
+    
     public Address getAddressByUserId(int id){
         Address a = new Address();
         
         try {
-            Class.forName("org.postgresql.Driver");
-            //Connection c = DriverManager.getConnection("jdbc:postgresql://localhost:5432/looksup", "postgres", "debora123");
-            Connection c = DriverManager.getConnection("jdbc:postgresql://localhost:5432/looksup", "postgres", "ufc123");
+            Class.forName(DbStuff.driver);
+            Connection c = DriverManager.getConnection(DbStuff.urlCon, DbStuff.user, DbStuff.password );
             
             String query = "SELECT * FROM address WHERE id_user = ?";
             PreparedStatement pstmt = c.prepareStatement(query);

@@ -25,9 +25,8 @@ public class ItemDAO {
     
     public boolean addItem(int id_product, int id_order ,int quantity) {
         try {
-            Class.forName("org.postgresql.Driver");
-            Connection c = DriverManager.getConnection("jdbc:postgresql://localhost:5432/looksup", "postgres", "debora123");
-            //Connection c = DriverManager.getConnection("jdbc:postgresql://localhost:5432/looksup", "postgres", "ufc123");
+            Class.forName(DbStuff.driver);
+            Connection c = DriverManager.getConnection(DbStuff.urlCon, DbStuff.user, DbStuff.password );
             
             String query = "INSERT INTO item (id_product, id_order , quantity) VALUES (?, ?, ?)";
             PreparedStatement pstmt = c.prepareStatement(query);

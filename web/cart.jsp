@@ -12,7 +12,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <!DOCTYPE html>
 <html>
 <head>
-<title>Shopin A Ecommerce Category Flat Bootstrap Responsive Website Template | Checkout :: w3layouts</title>
+<title>Carrinho | Looks Up : Store</title>
 <link href="css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
 <!-- Custom Theme files -->
 <!--theme-style-->
@@ -99,9 +99,9 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
               %>
               <!-- product -->
               <tr class="cart-header">
-                <td class="ring-in"><a href="single.html" class="at-in"><img src=<%= p.getImage() %> class="img-responsive" alt=""></a>
+                <td class="ring-in"><a href="single.jsp?id=<%= p.getId() %>" class="at-in"><img src="<%= p.getImage() %>" class="img-responsive" alt=""></a>
                 <div class="sed">
-                        <h5><a href="single.html"><%= p.getName() %></a></h5>
+                        <h5><a href="single.jsp?id=<%= p.getId() %>"><%= p.getName() %></a></h5>
                         <p><%= p.getDescription() %></p>
 
                 </div>

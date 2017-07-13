@@ -34,9 +34,8 @@ public class PedidoDAO {
         int id_order = 0;
         
         try {
-            Class.forName("org.postgresql.Driver");
-            Connection c = DriverManager.getConnection("jdbc:postgresql://localhost:5432/looksup", "postgres", "debora123");
-            //Connection c = DriverManager.getConnection("jdbc:postgresql://localhost:5432/looksup", "postgres", "ufc123");
+            Class.forName(DbStuff.driver);
+            Connection c = DriverManager.getConnection(DbStuff.urlCon, DbStuff.user, DbStuff.password );
             
             String query = "INSERT INTO \"order\" (id_user, value , date) VALUES (?, ?, ?)";
             PreparedStatement pstmt = c.prepareStatement(query);
@@ -75,9 +74,8 @@ public class PedidoDAO {
         Pedido p = new Pedido();
         
         try {
-            Class.forName("org.postgresql.Driver");
-            Connection c = DriverManager.getConnection("jdbc:postgresql://localhost:5432/looksup", "postgres", "debora123");
-            //Connection c = DriverManager.getConnection("jdbc:postgresql://localhost:5432/looksup", "postgres", "ufc123");
+            Class.forName(DbStuff.driver);
+            Connection c = DriverManager.getConnection(DbStuff.urlCon, DbStuff.user, DbStuff.password );
             
             String query = "SELECT * FROM \"order\" WHERE id = ?";
             PreparedStatement pstmt = c.prepareStatement(query);
@@ -107,9 +105,8 @@ public class PedidoDAO {
          List<Pedido> resultado = new ArrayList<Pedido>();
            
         try {
-            Class.forName("org.postgresql.Driver");
-            Connection c = DriverManager.getConnection("jdbc:postgresql://localhost:5432/looksup", "postgres", "debora123");
-            //Connection c = DriverManager.getConnection("jdbc:postgresql://localhost:5432/looksup", "postgres", "ufc123");
+            Class.forName(DbStuff.driver);
+            Connection c = DriverManager.getConnection(DbStuff.urlCon, DbStuff.user, DbStuff.password );
             
             
             String query = ("SELECT * FROM \"order\" WHERE id_user = ?");
@@ -144,9 +141,8 @@ public class PedidoDAO {
          List<Item> resultado = new ArrayList<Item>();
            
         try {
-            Class.forName("org.postgresql.Driver");
-            Connection c = DriverManager.getConnection("jdbc:postgresql://localhost:5432/looksup", "postgres", "debora123");
-            //Connection c = DriverManager.getConnection("jdbc:postgresql://localhost:5432/looksup", "postgres", "ufc123");
+            Class.forName(DbStuff.driver);
+            Connection c = DriverManager.getConnection(DbStuff.urlCon, DbStuff.user, DbStuff.password );
             
             
             String query = ("SELECT * FROM item WHERE id_order = ?");

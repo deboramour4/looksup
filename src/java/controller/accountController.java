@@ -26,19 +26,48 @@ public class accountController extends HttpServlet {
     
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
         HttpSession session = request.getSession();
+        //id do usuario guardado na sessão
+        int id_user = (Integer) session.getAttribute("id");
+        boolean result2=false;
         
+        //dados do usuario
+        String name = request.getParameter("name");
+        String birth = request.getParameter("birth");
+        String phone = request.getParameter("phone");
+        int phoneInt = 0;       
+        if (phone != ""){
+            phoneInt =  Integer.parseInt(request.getParameter("phone"));
+        }
+        
+        //dados da conta
+        String email = request.getParameter("email");
+        String password = request.getParameter("password");
+        //atualizando dados da conta    
+        UsuarioDAO daoU = new UsuarioDAO();
+        boolean result1 = daoU.updateUser(id_user, name, email, birth, phoneInt, password);
+               
+        
+        //dados do endereço
         String way = request.getParameter("way");
         int number =  Integer.parseInt(request.getParameter("number"));
         String city = request.getParameter("city");
         String state = request.getParameter("state");
-        String country = request.getParameter("country");
-        int id_user = (Integer) session.getAttribute("id");
+        String country = request.getParameter("country");      
         
-        AddressDAO dao = new AddressDAO();
+            
+        //adiciona novo endereço
+        AddressDAO daoAd = new AddressDAO();
+        Address ad = new Address();
+        ad = daoAd.getAddressByUserId(id_user);
+        //checa se o usuário já possui um endereço ou não
+        if(ad == null ){
+            result2 = daoAd.addAddress(way, number, city, state, country, id_user);
+        } else {
+            result2 = daoAd.updateAddress(way, number, city, state, country, id_user);
+        }  
         
-        boolean result = dao.addAddress(way, number, city, state, country, id_user);
-                
-        if(result){
+                            
+        if(result1 && result2){
             response.sendRedirect("account.jsp");
         } else {
             response.sendRedirect("404.jsp");

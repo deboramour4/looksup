@@ -26,7 +26,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <!DOCTYPE html>
 <html>
 <head>
-<title>Shopin A Ecommerce Category Flat Bootstrap Responsive Website Template | Single :: w3layouts</title>
+<title>Minha Conta | Looks Up : Store</title>
 <link href="css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
 <!-- Custom Theme files -->
 <!--theme-style-->
@@ -255,7 +255,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                                                 <td class="ring-in">
                                                     <a href="single.html" class="at-in"><img src=<%= prod.getImage() %> class="img-responsive" alt=""></a>
                                                     <div class="sed">
-                                                            <h5><a href="single.html"><%= prod.getName() %></a></h5>
+                                                            <h5><a href="single.jsp?id=<%= prod.getId() %>"><%= prod.getName() %></a></h5>
                                                     </div>
                                                     <div class="clearfix"> </div>
                                                 </td>

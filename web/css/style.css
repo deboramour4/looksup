@@ -45,6 +45,10 @@ body a{
 	-moz-transition: 0.5s all;
 	-ms-transition: 0.5s all;
 }
+
+.resOrd{
+    margin: 0px 20px;
+}
  ul{
 	padding: 0;
 	margin: 0;
@@ -1343,6 +1347,7 @@ a:hover{
 
 .order-details:hover {
     background-color:#F7F7F7;
+    cursor:pointer;
 }
 
 .table-item th {
@@ -1515,9 +1520,9 @@ ul.tag-in li a:hover{
 /*--//footer--*/
 /*--typo--*/
 .page-header h3{
-	font-size: 3em;
-	color:#000;
-	font-family: 'Ubuntu-Regular';
+	color: #000;
+        font-family: 'Ubuntu-Regular';
+        text-align: center;
 }
 .table > thead > tr > th, .table > tbody > tr > th, .table > tfoot > tr > th, .table > thead > tr > td, .table > tbody > tr > td, .table > tfoot > tr > td {
   padding: 8px;
@@ -1816,6 +1821,11 @@ ul.nav_1 li {
 }
 .wishlist {
     width: 60%;
+}
+
+.wish:hover {
+    cursor: text !important; 
+    text-decoration: underline !important;
 }
 th {
     font-size: 1em;

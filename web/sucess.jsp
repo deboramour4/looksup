@@ -7,7 +7,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <!DOCTYPE html>
 <html>
 <head>
-<title>Shopin A Ecommerce Category Flat Bootstrap Responsive Website Template | Wishlist :: w3layouts</title>
+<title>Compras | Looks Up : Store</title>
 <link href="css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
 <!-- Custom Theme files -->
 <!--theme-style-->
@@ -55,20 +55,44 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <!--banner-->
 <div class="banner-top">
 	<div class="container">
-		<h1>Wishlist</h1>
+		<h1>Compras</h1>
 		<em></em>
-		<h2><a href="index.html">Home</a><label>/</label>Wishlist</h2>
+		<h2><a href="index.jsp">Home</a><label>/</label>Compras</h2>
 	</div>
 </div>
 <!--login-->
 	<div class="container">
-		<div class="wishlist">
-			<h6><a href="#">Product Name</a>	<a href="#">Unit Price</a>	<a href="#">Stock Status</a></h6>	
-			<p>No products were added to the wishlist</p>
+		<div class="four">
+                    <!--alerts-->
+                    <%
+                        String resultOrder = request.getParameter("resultOrder");
+                        if (resultOrder.equals("true")) {
+                    %>
+                    <div class="alert alert-success" role="alert">
+                        <strong>Compra realizada com sucesso!</strong> É uma satisfação para nós deixá-la na moda.
+                    </div>
+                    <div class="page-header">
+                       <a href="account.jsp" class="add-to item_add hvr-skew-backward resOrd">Ir para Meus Pedidos</a>
+                        <a href="index.jsp" class="add-to item_add hvr-skew-backward resOrd">Voltar para as compras</a>
+                    </div>
+                    <%
+                        } else if (resultOrder.equals("false")) {
+                    %>                   
+                   <div class="alert alert-danger" role="alert">
+                     <strong>A compra não pode ser realizada!</strong> Alguns dos itens não possuem quantidade suficiente em estoque. Volte para o seu carrinho de compras e tente de novo.
+                    </div>
+                    <div class="page-header">
+                        <a href="cart" class="add-to item_add hvr-skew-backward">Voltar para o carrinho</a>
+                    </div>
+                    <%
+                        }
+                    %>
+                   <!--//alerts-->
 		</div>
 	</div>
 <!--//login-->
-<!--brand-->
+
+			<!--brand-->
 		<div class="container">
 			<div class="brand">
 				<div class="col-md-3 brand-grid">
@@ -87,6 +111,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			</div>
 			</div>
 			<!--//brand-->
+		
 	<!--//content-->
 
 <!--//footer-->

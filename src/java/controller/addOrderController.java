@@ -26,6 +26,9 @@ public class addOrderController extends HttpServlet {
     protected void service(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         HttpSession session = request.getSession();
+        boolean notEnought = false;
+        boolean orderCreate = true;
+        int id_order = 0;
         
         if (session.getAttribute("id") == null){
             response.sendRedirect("login.jsp?addOrder=1");
@@ -35,11 +38,9 @@ public class addOrderController extends HttpServlet {
         
             ItemDAO daoItem = new ItemDAO();
             PedidoDAO daoPed = new PedidoDAO();
+            ProdutoDAO daoProd = new ProdutoDAO();
 
-
-            int id_order = daoPed.addOrder(id_user,  (float)session.getAttribute("totalCart") ); // cria um pedido para o usuario e retorna seu id(order)
-
-
+          
             // desmanchando os cookies
             Cookie[] cookies = request.getCookies();
 
@@ -62,19 +63,38 @@ public class addOrderController extends HttpServlet {
                             }
 
                             for(int i=0  ; i < arrayProd.length ; i++){
-                                boolean addI = daoItem.addItem( Integer.parseInt(arrayPValues[i][0]), id_order,  Integer.parseInt(arrayPValues[i][1]));
-                                if(!addI) {
-                                    System.out.println("Deu ruim");
+                                
+                                //checa se tem estoque disponivel do produto
+                                Produto pr = daoProd.getProductById(Integer.parseInt(arrayPValues[i][0]));
+                                int qntP = pr.getQuantity();
+                                 System.out.println("QUANTIDADE DO PRODUTO: "+qntP);
+                                
+                                 //se a quantidade de produtos no estoque é menor que a quantidade do pedido
+                                if(qntP < Integer.parseInt(arrayPValues[i][1])){ 
+                                    System.out.println("Era mais que tinha no estoque");
+                                    notEnought = true;
+                                } else { //se a quantidade de produtos no estoque é maior ou igual que a quantidade do pedido, cria o pedido e adiciona os itens
+                                    if(orderCreate){
+                                         id_order = daoPed.addOrder(id_user,  (float)session.getAttribute("totalCart") ); // cria um pedido para o usuario e retorna seu id(order)
+                                         orderCreate = false;
+                                    }
+                                    daoProd.setProductQuantity(Integer.parseInt(arrayPValues[i][0]), pr.getQuantity()-Integer.parseInt(arrayPValues[i][1]));
+                                    System.out.println("QUANTIDADE NOVA DO PRODUTO: "+ (pr.getQuantity()-Integer.parseInt(arrayPValues[i][1])));
+                                    boolean addI = daoItem.addItem( Integer.parseInt(arrayPValues[i][0]), id_order,  Integer.parseInt(arrayPValues[i][1]));
                                 }
-                            } 
-                            
+                                
+                            }                            
+                            c.setValue(""); // esvazia o carrinho
                         } else {
                             System.out.println("pCart empty");
                         }
                     }
                 }
-                
-                response.sendRedirect("account.jsp#tab2");
+                if(!notEnought){
+                    response.sendRedirect("sucess.jsp?resultOrder=true");
+                } else {
+                    response.sendRedirect("sucess.jsp?resultOrder=false");
+                }
             } 
         
         }
